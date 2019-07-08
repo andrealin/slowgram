@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A10B13A687038F1C63C1039 /* Pods_SlowgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C58053FB19F1F0811721EB /* Pods_SlowgramTests.framework */; };
 		D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7C22D406440045CA8C /* AppDelegate.m */; };
 		D2615C8022D406440045CA8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7F22D406440045CA8C /* ViewController.m */; };
 		D2615C8322D406440045CA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8122D406440045CA8C /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		D2615C8B22D406450045CA8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C8A22D406450045CA8C /* main.m */; };
 		D2615C9522D406450045CA8C /* SlowgramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9422D406450045CA8C /* SlowgramTests.m */; };
 		D2615CA022D406450045CA8C /* SlowgramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9F22D406450045CA8C /* SlowgramUITests.m */; };
+		D270F991744D1F677D08E6CD /* Pods_SlowgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */; };
+		EA24CA3051229634609D46D2 /* Pods_Slowgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A9ED77ADC812EEE072C984 /* Pods_Slowgram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		241467AF8EB0D3971749047A /* Pods-SlowgramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgramUITests.debug.xcconfig"; path = "Target Support Files/Pods-SlowgramUITests/Pods-SlowgramUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		32C58053FB19F1F0811721EB /* Pods_SlowgramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowgramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA2A119AF14E262A0BF2A7E /* Pods-SlowgramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgramUITests.release.xcconfig"; path = "Target Support Files/Pods-SlowgramUITests/Pods-SlowgramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7366047781DC53F38DDAB9A5 /* Pods-Slowgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slowgram.debug.xcconfig"; path = "Target Support Files/Pods-Slowgram/Pods-Slowgram.debug.xcconfig"; sourceTree = "<group>"; };
+		7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SlowgramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E3CC778CAFAC50CF0294F31 /* Pods-SlowgramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgramTests.release.xcconfig"; path = "Target Support Files/Pods-SlowgramTests/Pods-SlowgramTests.release.xcconfig"; sourceTree = "<group>"; };
+		97A9ED77ADC812EEE072C984 /* Pods_Slowgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slowgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E4306685D21024556630743 /* Pods-SlowgramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgramTests.debug.xcconfig"; path = "Target Support Files/Pods-SlowgramTests/Pods-SlowgramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2615C7822D406440045CA8C /* Slowgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slowgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2615C7B22D406440045CA8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2615C7C22D406440045CA8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		D2615C9B22D406450045CA8C /* SlowgramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowgramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2615C9F22D406450045CA8C /* SlowgramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowgramUITests.m; sourceTree = "<group>"; };
 		D2615CA122D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DD2E08F22D015858717DD6 /* Pods-Slowgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slowgram.release.xcconfig"; path = "Target Support Files/Pods-Slowgram/Pods-Slowgram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA24CA3051229634609D46D2 /* Pods_Slowgram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A10B13A687038F1C63C1039 /* Pods_SlowgramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D270F991744D1F677D08E6CD /* Pods_SlowgramUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54F6F3E68B4058F98D70C466 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97A9ED77ADC812EEE072C984 /* Pods_Slowgram.framework */,
+				32C58053FB19F1F0811721EB /* Pods_SlowgramTests.framework */,
+				7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2615C6F22D406440045CA8C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				D2615C9322D406450045CA8C /* SlowgramTests */,
 				D2615C9E22D406450045CA8C /* SlowgramUITests */,
 				D2615C7922D406440045CA8C /* Products */,
+				D853F2A0FABF0078BC904E2E /* Pods */,
+				54F6F3E68B4058F98D70C466 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +159,20 @@
 			path = SlowgramUITests;
 			sourceTree = "<group>";
 		};
+		D853F2A0FABF0078BC904E2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7366047781DC53F38DDAB9A5 /* Pods-Slowgram.debug.xcconfig */,
+				F4DD2E08F22D015858717DD6 /* Pods-Slowgram.release.xcconfig */,
+				9E4306685D21024556630743 /* Pods-SlowgramTests.debug.xcconfig */,
+				8E3CC778CAFAC50CF0294F31 /* Pods-SlowgramTests.release.xcconfig */,
+				241467AF8EB0D3971749047A /* Pods-SlowgramUITests.debug.xcconfig */,
+				5DA2A119AF14E262A0BF2A7E /* Pods-SlowgramUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2615CA422D406450045CA8C /* Build configuration list for PBXNativeTarget "Slowgram" */;
 			buildPhases = (
+				7708AAA1E54B4C3908A4428E /* [CP] Check Pods Manifest.lock */,
 				D2615C7422D406440045CA8C /* Sources */,
 				D2615C7522D406440045CA8C /* Frameworks */,
 				D2615C7622D406440045CA8C /* Resources */,
+				8B95065A3253758590314C68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2615CA722D406450045CA8C /* Build configuration list for PBXNativeTarget "SlowgramTests" */;
 			buildPhases = (
+				FB71A088FEF03CD4E5109427 /* [CP] Check Pods Manifest.lock */,
 				D2615C8C22D406450045CA8C /* Sources */,
 				D2615C8D22D406450045CA8C /* Frameworks */,
 				D2615C8E22D406450045CA8C /* Resources */,
@@ -174,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2615CAA22D406450045CA8C /* Build configuration list for PBXNativeTarget "SlowgramUITests" */;
 			buildPhases = (
+				FCDD76C90A614A81DC1637BA /* [CP] Check Pods Manifest.lock */,
 				D2615C9722D406450045CA8C /* Sources */,
 				D2615C9822D406450045CA8C /* Frameworks */,
 				D2615C9922D406450045CA8C /* Resources */,
@@ -256,6 +301,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7708AAA1E54B4C3908A4428E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Slowgram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B95065A3253758590314C68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Slowgram/Pods-Slowgram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Slowgram/Pods-Slowgram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Slowgram/Pods-Slowgram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB71A088FEF03CD4E5109427 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlowgramTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCDD76C90A614A81DC1637BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SlowgramUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2615C7422D406440045CA8C /* Sources */ = {
@@ -433,6 +564,7 @@
 		};
 		D2615CA522D406450045CA8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7366047781DC53F38DDAB9A5 /* Pods-Slowgram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +582,7 @@
 		};
 		D2615CA622D406450045CA8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4DD2E08F22D015858717DD6 /* Pods-Slowgram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +600,7 @@
 		};
 		D2615CA822D406450045CA8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E4306685D21024556630743 /* Pods-SlowgramTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -486,6 +620,7 @@
 		};
 		D2615CA922D406450045CA8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E3CC778CAFAC50CF0294F31 /* Pods-SlowgramTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +640,7 @@
 		};
 		D2615CAB22D406450045CA8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241467AF8EB0D3971749047A /* Pods-SlowgramUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YGDMF63JJ6;
@@ -523,6 +659,7 @@
 		};
 		D2615CAC22D406450045CA8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DA2A119AF14E262A0BF2A7E /* Pods-SlowgramUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YGDMF63JJ6;
