@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7C22D406440045CA8C /* AppDelegate.m */; };
+		D2615C8022D406440045CA8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7F22D406440045CA8C /* ViewController.m */; };
+		D2615C8322D406440045CA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8122D406440045CA8C /* Main.storyboard */; };
+		D2615C8522D406450045CA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8422D406450045CA8C /* Assets.xcassets */; };
+		D2615C8822D406450045CA8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8622D406450045CA8C /* LaunchScreen.storyboard */; };
+		D2615C8B22D406450045CA8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C8A22D406450045CA8C /* main.m */; };
+		D2615C9522D406450045CA8C /* SlowgramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9422D406450045CA8C /* SlowgramTests.m */; };
+		D2615CA022D406450045CA8C /* SlowgramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9F22D406450045CA8C /* SlowgramUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2615C9122D406450045CA8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2615C7022D406440045CA8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2615C7722D406440045CA8C;
+			remoteInfo = Slowgram;
+		};
+		D2615C9C22D406450045CA8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2615C7022D406440045CA8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2615C7722D406440045CA8C;
+			remoteInfo = Slowgram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2615C7822D406440045CA8C /* Slowgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slowgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2615C7B22D406440045CA8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D2615C7C22D406440045CA8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D2615C7E22D406440045CA8C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D2615C7F22D406440045CA8C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D2615C8222D406440045CA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2615C8422D406450045CA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2615C8722D406450045CA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2615C8922D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2615C8A22D406450045CA8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2615C9022D406450045CA8C /* SlowgramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowgramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2615C9422D406450045CA8C /* SlowgramTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowgramTests.m; sourceTree = "<group>"; };
+		D2615C9622D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2615C9B22D406450045CA8C /* SlowgramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowgramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2615C9F22D406450045CA8C /* SlowgramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowgramUITests.m; sourceTree = "<group>"; };
+		D2615CA122D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2615C7522D406440045CA8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2615C8D22D406450045CA8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2615C9822D406450045CA8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2615C6F22D406440045CA8C = {
+			isa = PBXGroup;
+			children = (
+				D2615C7A22D406440045CA8C /* Slowgram */,
+				D2615C9322D406450045CA8C /* SlowgramTests */,
+				D2615C9E22D406450045CA8C /* SlowgramUITests */,
+				D2615C7922D406440045CA8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2615C7922D406440045CA8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2615C7822D406440045CA8C /* Slowgram.app */,
+				D2615C9022D406450045CA8C /* SlowgramTests.xctest */,
+				D2615C9B22D406450045CA8C /* SlowgramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2615C7A22D406440045CA8C /* Slowgram */ = {
+			isa = PBXGroup;
+			children = (
+				D2615C7B22D406440045CA8C /* AppDelegate.h */,
+				D2615C7C22D406440045CA8C /* AppDelegate.m */,
+				D2615C7E22D406440045CA8C /* ViewController.h */,
+				D2615C7F22D406440045CA8C /* ViewController.m */,
+				D2615C8122D406440045CA8C /* Main.storyboard */,
+				D2615C8422D406450045CA8C /* Assets.xcassets */,
+				D2615C8622D406450045CA8C /* LaunchScreen.storyboard */,
+				D2615C8922D406450045CA8C /* Info.plist */,
+				D2615C8A22D406450045CA8C /* main.m */,
+			);
+			path = Slowgram;
+			sourceTree = "<group>";
+		};
+		D2615C9322D406450045CA8C /* SlowgramTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2615C9422D406450045CA8C /* SlowgramTests.m */,
+				D2615C9622D406450045CA8C /* Info.plist */,
+			);
+			path = SlowgramTests;
+			sourceTree = "<group>";
+		};
+		D2615C9E22D406450045CA8C /* SlowgramUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D2615C9F22D406450045CA8C /* SlowgramUITests.m */,
+				D2615CA122D406450045CA8C /* Info.plist */,
+			);
+			path = SlowgramUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2615C7722D406440045CA8C /* Slowgram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2615CA422D406450045CA8C /* Build configuration list for PBXNativeTarget "Slowgram" */;
+			buildPhases = (
+				D2615C7422D406440045CA8C /* Sources */,
+				D2615C7522D406440045CA8C /* Frameworks */,
+				D2615C7622D406440045CA8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Slowgram;
+			productName = Slowgram;
+			productReference = D2615C7822D406440045CA8C /* Slowgram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2615C8F22D406450045CA8C /* SlowgramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2615CA722D406450045CA8C /* Build configuration list for PBXNativeTarget "SlowgramTests" */;
+			buildPhases = (
+				D2615C8C22D406450045CA8C /* Sources */,
+				D2615C8D22D406450045CA8C /* Frameworks */,
+				D2615C8E22D406450045CA8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2615C9222D406450045CA8C /* PBXTargetDependency */,
+			);
+			name = SlowgramTests;
+			productName = SlowgramTests;
+			productReference = D2615C9022D406450045CA8C /* SlowgramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2615C9A22D406450045CA8C /* SlowgramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2615CAA22D406450045CA8C /* Build configuration list for PBXNativeTarget "SlowgramUITests" */;
+			buildPhases = (
+				D2615C9722D406450045CA8C /* Sources */,
+				D2615C9822D406450045CA8C /* Frameworks */,
+				D2615C9922D406450045CA8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2615C9D22D406450045CA8C /* PBXTargetDependency */,
+			);
+			name = SlowgramUITests;
+			productName = SlowgramUITests;
+			productReference = D2615C9B22D406450045CA8C /* SlowgramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2615C7022D406440045CA8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = drealin;
+				TargetAttributes = {
+					D2615C7722D406440045CA8C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					D2615C8F22D406450045CA8C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = D2615C7722D406440045CA8C;
+					};
+					D2615C9A22D406450045CA8C = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = D2615C7722D406440045CA8C;
+					};
+				};
+			};
+			buildConfigurationList = D2615C7322D406440045CA8C /* Build configuration list for PBXProject "Slowgram" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2615C6F22D406440045CA8C;
+			productRefGroup = D2615C7922D406440045CA8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2615C7722D406440045CA8C /* Slowgram */,
+				D2615C8F22D406450045CA8C /* SlowgramTests */,
+				D2615C9A22D406450045CA8C /* SlowgramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2615C7622D406440045CA8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2615C8822D406450045CA8C /* LaunchScreen.storyboard in Resources */,
+				D2615C8522D406450045CA8C /* Assets.xcassets in Resources */,
+				D2615C8322D406440045CA8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2615C8E22D406450045CA8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2615C9922D406450045CA8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2615C7422D406440045CA8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2615C8022D406440045CA8C /* ViewController.m in Sources */,
+				D2615C8B22D406450045CA8C /* main.m in Sources */,
+				D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2615C8C22D406450045CA8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2615C9522D406450045CA8C /* SlowgramTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2615C9722D406450045CA8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2615CA022D406450045CA8C /* SlowgramUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2615C9222D406450045CA8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2615C7722D406440045CA8C /* Slowgram */;
+			targetProxy = D2615C9122D406450045CA8C /* PBXContainerItemProxy */;
+		};
+		D2615C9D22D406450045CA8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2615C7722D406440045CA8C /* Slowgram */;
+			targetProxy = D2615C9C22D406450045CA8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D2615C8122D406440045CA8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2615C8222D406440045CA8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2615C8622D406450045CA8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2615C8722D406450045CA8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2615CA222D406450045CA8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D2615CA322D406450045CA8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2615CA522D406450045CA8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YGDMF63JJ6;
+				INFOPLIST_FILE = Slowgram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.Slowgram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2615CA622D406450045CA8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YGDMF63JJ6;
+				INFOPLIST_FILE = Slowgram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.Slowgram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D2615CA822D406450045CA8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YGDMF63JJ6;
+				INFOPLIST_FILE = SlowgramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SlowgramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slowgram.app/Slowgram";
+			};
+			name = Debug;
+		};
+		D2615CA922D406450045CA8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YGDMF63JJ6;
+				INFOPLIST_FILE = SlowgramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SlowgramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slowgram.app/Slowgram";
+			};
+			name = Release;
+		};
+		D2615CAB22D406450045CA8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YGDMF63JJ6;
+				INFOPLIST_FILE = SlowgramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SlowgramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Slowgram;
+			};
+			name = Debug;
+		};
+		D2615CAC22D406450045CA8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YGDMF63JJ6;
+				INFOPLIST_FILE = SlowgramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.SlowgramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Slowgram;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2615C7322D406440045CA8C /* Build configuration list for PBXProject "Slowgram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2615CA222D406450045CA8C /* Debug */,
+				D2615CA322D406450045CA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2615CA422D406450045CA8C /* Build configuration list for PBXNativeTarget "Slowgram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2615CA522D406450045CA8C /* Debug */,
+				D2615CA622D406450045CA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2615CA722D406450045CA8C /* Build configuration list for PBXNativeTarget "SlowgramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2615CA822D406450045CA8C /* Debug */,
+				D2615CA922D406450045CA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2615CAA22D406450045CA8C /* Build configuration list for PBXNativeTarget "SlowgramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2615CAB22D406450045CA8C /* Debug */,
+				D2615CAC22D406450045CA8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2615C7022D406440045CA8C /* Project object */;
+}
