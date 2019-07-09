@@ -137,8 +137,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w5f-nm-cCj" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="375" id="5qH-7k-z2n"/>
-                                                        <constraint firstAttribute="width" constant="375" id="dbU-Hc-AnX"/>
+                                                        <constraint firstAttribute="width" secondItem="w5f-nm-cCj" secondAttribute="height" multiplier="1:1" id="eC6-92-0rO"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0p-Lh-Bcj">
@@ -158,6 +157,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="w5f-nm-cCj" secondAttribute="trailing" id="wJp-5D-hum"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="w5f-nm-cCj" firstAttribute="width" secondItem="I0z-Xa-EAI" secondAttribute="width" id="74e-52-FhB"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="captionLabel" destination="v0p-Lh-Bcj" id="Axf-IW-z6V"/>
                                             <outlet property="photoView" destination="w5f-nm-cCj" id="bK2-u8-6bs"/>
