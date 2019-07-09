@@ -7,6 +7,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
@@ -58,7 +59,9 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 - (IBAction)shareClicked:(id)sender {
-    
+    [Post postUserImage:self.selectedImage withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }];
 }
 
 /*
