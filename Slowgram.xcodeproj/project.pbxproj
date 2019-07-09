@@ -10,6 +10,7 @@
 		4A10B13A687038F1C63C1039 /* Pods_SlowgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C58053FB19F1F0811721EB /* Pods_SlowgramTests.framework */; };
 		D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B1D22D4131E003DF641 /* LoginViewController.m */; };
 		D2092B2122D41B0C003DF641 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B2022D41B0C003DF641 /* HomeViewController.m */; };
+		D2092B2422D455A8003DF641 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B2322D455A8003DF641 /* ComposeViewController.m */; };
 		D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7C22D406440045CA8C /* AppDelegate.m */; };
 		D2615C8322D406440045CA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8122D406440045CA8C /* Main.storyboard */; };
 		D2615C8522D406450045CA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8422D406450045CA8C /* Assets.xcassets */; };
@@ -51,6 +52,8 @@
 		D2092B1D22D4131E003DF641 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D2092B1F22D41B0C003DF641 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D2092B2022D41B0C003DF641 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D2092B2222D455A8003DF641 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		D2092B2322D455A8003DF641 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		D2615C7822D406440045CA8C /* Slowgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slowgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2615C7B22D406440045CA8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2615C7C22D406440045CA8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				D2092B1D22D4131E003DF641 /* LoginViewController.m */,
 				D2092B1F22D41B0C003DF641 /* HomeViewController.h */,
 				D2092B2022D41B0C003DF641 /* HomeViewController.m */,
+				D2092B2222D455A8003DF641 /* ComposeViewController.h */,
+				D2092B2322D455A8003DF641 /* ComposeViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 		D2615C7A22D406440045CA8C /* Slowgram */ = {
 			isa = PBXGroup;
 			children = (
+				D2B58D8622D45BCD007A86B4 /* Models */,
 				D2092B1822D412AA003DF641 /* View Controllers */,
 				D2615C7B22D406440045CA8C /* AppDelegate.h */,
 				D2615C7C22D406440045CA8C /* AppDelegate.m */,
@@ -170,6 +176,13 @@
 				D2615CA122D406450045CA8C /* Info.plist */,
 			);
 			path = SlowgramUITests;
+			sourceTree = "<group>";
+		};
+		D2B58D8622D45BCD007A86B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D853F2A0FABF0078BC904E2E /* Pods */ = {
@@ -408,6 +421,7 @@
 				D2615C8B22D406450045CA8C /* main.m in Sources */,
 				D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */,
 				D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */,
+				D2092B2422D455A8003DF641 /* ComposeViewController.m in Sources */,
 				D2092B2122D41B0C003DF641 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

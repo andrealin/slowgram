@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  ComposeViewController.h
 //  Slowgram
 //
 //  Created by drealin on 7/8/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController<UIImagePickerControllerDelegate>
+@interface ComposeViewController : UIViewController
 
 @end
 
