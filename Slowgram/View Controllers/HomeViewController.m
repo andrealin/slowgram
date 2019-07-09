@@ -13,14 +13,16 @@
 #import "Post.h"
 #import "SlowgramCell.h"
 #import "DetailsViewController.h"
+#import "InfiniteScrollActivityView.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (strong, nonatomic) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 @end
 
 @implementation HomeViewController
+InfiniteScrollActivityView *loadingMoreView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +34,16 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    // Set up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.tableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
         
     // Do any additional setup after loading the view.
     // construct query
@@ -39,13 +51,13 @@
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     postQuery.limit = 20;
+//    postQuery.limit = 4;
     
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             // do something with the data fetched
             self.posts = posts;
-            NSLog(@"success loading posts");
             
             [self.tableView reloadData];
         }
@@ -54,6 +66,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    
 }
 // Makes a network request to get updated data
 // Updates the tableView with the new data
@@ -71,7 +84,6 @@
         if (posts) {
             // do something with the data fetched
             self.posts = posts;
-            NSLog(@"success loading posts");
             
             [self.tableView reloadData];
             
@@ -98,12 +110,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"number of rows calle");
     return self.posts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cell for row at index path called");
     SlowgramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SlowgramCell" forIndexPath:indexPath];
     Post *post = self.posts[indexPath.row];
     [cell updateWithPost:post];
@@ -122,6 +132,68 @@
         detailsViewController.post = post;
     }
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Handle scroll behavior here
+    if(!self.isMoreDataLoading){
+        
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            // Code to load more results
+            [self loadMoreData];
+        }
+        
+    }
+}
+
+-(void)loadMoreData{
+    
+    // construct query
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    
+    // load twenty more posts past the last post loaded
+    Post *post = self.posts[self.posts.count-1];
+    NSDate *dateOfLastPost = post.createdAt;
+    NSLog(@"%@", dateOfLastPost);
+    [postQuery whereKey:@"createdAt" lessThan:dateOfLastPost];
+    postQuery.limit = 20;
+//    postQuery.limit = 4;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            self.posts = [self.posts arrayByAddingObjectsFromArray:posts];
+            
+            // Update flag
+//            self.isMoreDataLoading = false;
+            
+            [self.tableView reloadData];
+
+            // Stop the loading indicator
+            [loadingMoreView stopAnimating];
+            
+        }
+        else {
+            // handle error
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -32,7 +32,6 @@
 }
 
 - (void)updateWithPost:(Post *)post {
-    NSLog(@"updating views");
     self.photoView.file = post[@"image"];
     [self.photoView loadInBackground];
     self.captionLabel.text = post.caption;
