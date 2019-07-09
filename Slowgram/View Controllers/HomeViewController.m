@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "Post.h"
 #import "SlowgramCell.h"
+#import "DetailsViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSArray *posts;
@@ -107,6 +108,19 @@
     Post *post = self.posts[indexPath.row];
     [cell updateWithPost:post];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // help
+    if ([@"detailsSegue" isEqualToString:segue.identifier]) {
+        // segue from instagram photo to details
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *post = self.posts[indexPath.row];
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = post;
+    }
 }
 /*
 #pragma mark - Navigation

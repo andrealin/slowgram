@@ -21,6 +21,7 @@
 		D270F991744D1F677D08E6CD /* Pods_SlowgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */; };
 		D2B58D8922D45BF3007A86B4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8822D45BF3007A86B4 /* Post.m */; };
 		D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */; };
+		D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBFFE322D5466A004AE350 /* DetailsViewController.m */; };
 		EA24CA3051229634609D46D2 /* Pods_Slowgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A9ED77ADC812EEE072C984 /* Pods_Slowgram.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		D2B58D8822D45BF3007A86B4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		D2B58D8B22D4627C007A86B4 /* SlowgramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowgramCell.h; sourceTree = "<group>"; };
 		D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowgramCell.m; sourceTree = "<group>"; };
+		D2DBFFE222D5466A004AE350 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		D2DBFFE322D5466A004AE350 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		F4DD2E08F22D015858717DD6 /* Pods-Slowgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slowgram.release.xcconfig"; path = "Target Support Files/Pods-Slowgram/Pods-Slowgram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +127,8 @@
 				D2092B2022D41B0C003DF641 /* HomeViewController.m */,
 				D2092B2222D455A8003DF641 /* ComposeViewController.h */,
 				D2092B2322D455A8003DF641 /* ComposeViewController.m */,
+				D2DBFFE222D5466A004AE350 /* DetailsViewController.h */,
+				D2DBFFE322D5466A004AE350 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */,
 				D2092B2422D455A8003DF641 /* ComposeViewController.m in Sources */,
 				D2092B2122D41B0C003DF641 /* HomeViewController.m in Sources */,
+				D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

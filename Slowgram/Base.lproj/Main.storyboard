@@ -115,7 +115,7 @@
             </objects>
             <point key="canvasLocation" x="164" y="-559"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="XKT-RM-TCS">
             <objects>
                 <viewController id="GCw-UJ-kPn" customClass="HomeViewController" sceneMemberID="viewController">
@@ -163,6 +163,7 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="v0p-Lh-Bcj" id="Axf-IW-z6V"/>
                                             <outlet property="photoView" destination="w5f-nm-cCj" id="bK2-u8-6bs"/>
+                                            <segue destination="vfx-Tc-Ahb" kind="show" identifier="detailsSegue" id="HuR-Zr-rVy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -177,7 +178,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kkl-cW-8BM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rZY-ey-LsP">
+                    <navigationItem key="navigationItem" title="Home" id="rZY-ey-LsP">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Vmj-h9-Ghu">
                             <connections>
                                 <action selector="logoutClicked:" destination="GCw-UJ-kPn" id="RJ7-Ia-xgJ"/>
@@ -196,6 +197,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY8-aE-Zp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="834.33283358320841"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="L21-el-vyw">
+            <objects>
+                <viewController id="vfx-Tc-Ahb" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nib-TP-VaP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-Rh-1gF" customClass="PFImageView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k6G-Rh-1gF" secondAttribute="height" multiplier="1:1" id="H6g-Vr-8bT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P84-mF-n0A">
+                                <rect key="frame" x="16" y="447" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye7-RF-cUl">
+                                <rect key="frame" x="16" y="476" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k6G-Rh-1gF" firstAttribute="leading" secondItem="REE-GM-3gP" secondAttribute="leading" id="C9e-gT-fdb"/>
+                            <constraint firstItem="P84-mF-n0A" firstAttribute="leading" secondItem="nib-TP-VaP" secondAttribute="leadingMargin" id="QeG-By-L8Y"/>
+                            <constraint firstItem="Ye7-RF-cUl" firstAttribute="trailing" secondItem="P84-mF-n0A" secondAttribute="trailing" id="UEF-SL-zsN"/>
+                            <constraint firstItem="k6G-Rh-1gF" firstAttribute="top" secondItem="REE-GM-3gP" secondAttribute="top" id="baw-of-95c"/>
+                            <constraint firstItem="k6G-Rh-1gF" firstAttribute="trailing" secondItem="REE-GM-3gP" secondAttribute="trailing" id="eKw-Id-gDF"/>
+                            <constraint firstItem="Ye7-RF-cUl" firstAttribute="top" secondItem="P84-mF-n0A" secondAttribute="bottom" constant="8" symbolic="YES" id="k1e-qt-R94"/>
+                            <constraint firstItem="P84-mF-n0A" firstAttribute="top" secondItem="k6G-Rh-1gF" secondAttribute="bottom" constant="8" symbolic="YES" id="mGg-p7-WcM"/>
+                            <constraint firstItem="Ye7-RF-cUl" firstAttribute="leading" secondItem="P84-mF-n0A" secondAttribute="leading" id="n8c-bS-vKh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P84-mF-n0A" secondAttribute="trailing" id="qU5-Fe-2Hh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="REE-GM-3gP"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionLabel" destination="P84-mF-n0A" id="4na-7A-C6p"/>
+                        <outlet property="photoView" destination="k6G-Rh-1gF" id="sd4-vb-uH5"/>
+                        <outlet property="timestampLabel" destination="Ye7-RF-cUl" id="J0p-Cy-fwF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VPr-XN-gxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="1519.7901049475263"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="vG0-Ff-2ji">
