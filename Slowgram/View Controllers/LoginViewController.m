@@ -1,23 +1,22 @@
 //
-//  ViewController.m
+//  LoginViewController.m
 //  Slowgram
 //
 //  Created by drealin on 7/8/19.
 //  Copyright © 2019 drealin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
 
 @end

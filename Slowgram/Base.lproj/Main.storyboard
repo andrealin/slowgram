@@ -10,14 +10,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMK-Vy-hEh">
+                                <rect key="frame" x="157" y="155.5" width="61" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6JH-H5-VoJ">
+                                <rect key="frame" x="40" y="218.5" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rga-fR-cXt">
+                                <rect key="frame" x="40" y="268.5" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVb-wH-gcL">
+                                <rect key="frame" x="281" y="318.5" width="54" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBX-SL-QyD">
+                                <rect key="frame" x="40" y="318.5" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6JH-H5-VoJ" secondAttribute="trailing" constant="40" id="5Mn-dq-jhU"/>
+                            <constraint firstItem="iBX-SL-QyD" firstAttribute="leading" secondItem="Rga-fR-cXt" secondAttribute="leading" id="Bd3-Mu-CZu"/>
+                            <constraint firstItem="ZMK-Vy-hEh" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1:2" id="Rfj-pz-JqZ"/>
+                            <constraint firstItem="6JH-H5-VoJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="WIn-ux-E1U"/>
+                            <constraint firstItem="iBX-SL-QyD" firstAttribute="top" secondItem="Rga-fR-cXt" secondAttribute="bottom" constant="20" id="YlB-lI-8zB"/>
+                            <constraint firstItem="sVb-wH-gcL" firstAttribute="firstBaseline" secondItem="iBX-SL-QyD" secondAttribute="firstBaseline" id="cU0-Nl-qbg"/>
+                            <constraint firstItem="sVb-wH-gcL" firstAttribute="trailing" secondItem="Rga-fR-cXt" secondAttribute="trailing" id="fEj-ba-lBO"/>
+                            <constraint firstItem="Rga-fR-cXt" firstAttribute="leading" secondItem="6JH-H5-VoJ" secondAttribute="leading" id="ijh-zp-0Yo"/>
+                            <constraint firstItem="6JH-H5-VoJ" firstAttribute="top" secondItem="ZMK-Vy-hEh" secondAttribute="bottom" constant="30" id="jgc-ld-lKO"/>
+                            <constraint firstItem="Rga-fR-cXt" firstAttribute="trailing" secondItem="6JH-H5-VoJ" secondAttribute="trailing" id="lIc-kp-gkL"/>
+                            <constraint firstItem="ZMK-Vy-hEh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="otq-52-Yny"/>
+                            <constraint firstItem="Rga-fR-cXt" firstAttribute="top" secondItem="6JH-H5-VoJ" secondAttribute="bottom" constant="20" id="qib-Ed-UlC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

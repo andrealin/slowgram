@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4A10B13A687038F1C63C1039 /* Pods_SlowgramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C58053FB19F1F0811721EB /* Pods_SlowgramTests.framework */; };
+		D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B1D22D4131E003DF641 /* LoginViewController.m */; };
 		D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7C22D406440045CA8C /* AppDelegate.m */; };
-		D2615C8022D406440045CA8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7F22D406440045CA8C /* ViewController.m */; };
 		D2615C8322D406440045CA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8122D406440045CA8C /* Main.storyboard */; };
 		D2615C8522D406450045CA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8422D406450045CA8C /* Assets.xcassets */; };
 		D2615C8822D406450045CA8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8622D406450045CA8C /* LaunchScreen.storyboard */; };
@@ -46,11 +46,11 @@
 		8E3CC778CAFAC50CF0294F31 /* Pods-SlowgramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgramTests.release.xcconfig"; path = "Target Support Files/Pods-SlowgramTests/Pods-SlowgramTests.release.xcconfig"; sourceTree = "<group>"; };
 		97A9ED77ADC812EEE072C984 /* Pods_Slowgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slowgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E4306685D21024556630743 /* Pods-SlowgramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SlowgramTests.debug.xcconfig"; path = "Target Support Files/Pods-SlowgramTests/Pods-SlowgramTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2092B1C22D4131E003DF641 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D2092B1D22D4131E003DF641 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D2615C7822D406440045CA8C /* Slowgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slowgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2615C7B22D406440045CA8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2615C7C22D406440045CA8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D2615C7E22D406440045CA8C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2615C7F22D406440045CA8C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2615C8222D406440045CA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2615C8422D406450045CA8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2615C8722D406450045CA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,6 +103,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D2092B1822D412AA003DF641 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2092B1C22D4131E003DF641 /* LoginViewController.h */,
+				D2092B1D22D4131E003DF641 /* LoginViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		D2615C6F22D406440045CA8C = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +137,9 @@
 		D2615C7A22D406440045CA8C /* Slowgram */ = {
 			isa = PBXGroup;
 			children = (
+				D2092B1822D412AA003DF641 /* View Controllers */,
 				D2615C7B22D406440045CA8C /* AppDelegate.h */,
 				D2615C7C22D406440045CA8C /* AppDelegate.m */,
-				D2615C7E22D406440045CA8C /* ViewController.h */,
-				D2615C7F22D406440045CA8C /* ViewController.m */,
 				D2615C8122D406440045CA8C /* Main.storyboard */,
 				D2615C8422D406450045CA8C /* Assets.xcassets */,
 				D2615C8622D406450045CA8C /* LaunchScreen.storyboard */,
@@ -169,7 +177,6 @@
 				241467AF8EB0D3971749047A /* Pods-SlowgramUITests.debug.xcconfig */,
 				5DA2A119AF14E262A0BF2A7E /* Pods-SlowgramUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -393,9 +400,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2615C8022D406440045CA8C /* ViewController.m in Sources */,
 				D2615C8B22D406450045CA8C /* main.m in Sources */,
 				D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */,
+				D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
