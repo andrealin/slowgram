@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,11 @@
                         <viewLayoutGuide key="safeArea" id="Kkl-cW-8BM"/>
                     </view>
                     <navigationItem key="navigationItem" id="rZY-ey-LsP">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Vmj-h9-Ghu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Vmj-h9-Ghu">
+                            <connections>
+                                <action selector="logoutClicked:" destination="GCw-UJ-kPn" id="RJ7-Ia-xgJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gY8-aE-Zp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
