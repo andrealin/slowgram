@@ -10,8 +10,12 @@
 #import "Parse/Parse.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "Post.h"
+#import "SlowgramCell.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSArray *posts;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,7 +23,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+        
     // Do any additional setup after loading the view.
+    // construct query
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            self.posts = posts;
+            NSLog(@"success loading posts");
+            
+            [self.tableView reloadData];
+        }
+        else {
+            // handle error
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 - (IBAction)logoutClicked:(id)sender {
     
@@ -33,6 +61,18 @@
     }];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"number of rows calle");
+    return self.posts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"cell for row at index path called");
+    SlowgramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SlowgramCell" forIndexPath:indexPath];
+    Post *post = self.posts[indexPath.row];
+    [cell updateWithPost:post];
+    return cell;
+}
 /*
 #pragma mark - Navigation
 

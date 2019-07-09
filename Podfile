@@ -7,6 +7,7 @@ target 'Slowgram' do
 
   # Pods for Slowgram
   pod 'Parse'
+  pod 'Parse/UI'
 
   target 'SlowgramTests' do
     inherit! :search_paths

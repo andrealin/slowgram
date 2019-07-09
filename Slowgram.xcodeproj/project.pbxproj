@@ -20,6 +20,7 @@
 		D2615CA022D406450045CA8C /* SlowgramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9F22D406450045CA8C /* SlowgramUITests.m */; };
 		D270F991744D1F677D08E6CD /* Pods_SlowgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */; };
 		D2B58D8922D45BF3007A86B4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8822D45BF3007A86B4 /* Post.m */; };
+		D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */; };
 		EA24CA3051229634609D46D2 /* Pods_Slowgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97A9ED77ADC812EEE072C984 /* Pods_Slowgram.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		D2615CA122D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B58D8722D45BF3007A86B4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		D2B58D8822D45BF3007A86B4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		D2B58D8B22D4627C007A86B4 /* SlowgramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowgramCell.h; sourceTree = "<group>"; };
+		D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowgramCell.m; sourceTree = "<group>"; };
 		F4DD2E08F22D015858717DD6 /* Pods-Slowgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slowgram.release.xcconfig"; path = "Target Support Files/Pods-Slowgram/Pods-Slowgram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +153,7 @@
 		D2615C7A22D406440045CA8C /* Slowgram */ = {
 			isa = PBXGroup;
 			children = (
+				D2B58D8A22D4624C007A86B4 /* Views */,
 				D2B58D8622D45BCD007A86B4 /* Models */,
 				D2092B1822D412AA003DF641 /* View Controllers */,
 				D2615C7B22D406440045CA8C /* AppDelegate.h */,
@@ -188,6 +192,15 @@
 				D2B58D8822D45BF3007A86B4 /* Post.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D2B58D8A22D4624C007A86B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2B58D8B22D4627C007A86B4 /* SlowgramCell.h */,
+				D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D853F2A0FABF0078BC904E2E /* Pods */ = {
@@ -427,6 +440,7 @@
 				D2B58D8922D45BF3007A86B4 /* Post.m in Sources */,
 				D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */,
 				D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */,
+				D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */,
 				D2092B2422D455A8003DF641 /* ComposeViewController.m in Sources */,
 				D2092B2122D41B0C003DF641 /* HomeViewController.m in Sources */,
 			);
