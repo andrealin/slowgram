@@ -55,11 +55,27 @@
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
 - (IBAction)cancelClicked:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
 - (IBAction)shareClicked:(id)sender {
-    [Post postUserImage:self.selectedImage withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    
+    [Post postUserImage:[self resizeImage:self.selectedImage withSize:CGSizeMake(200.0, 200.0)] withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         [self dismissViewControllerAnimated:true completion:nil];
     }];
 }
