@@ -7,6 +7,7 @@
 //
 
 #import "Post.h"
+#import "Comment.h"
 
 @implementation Post
 
@@ -17,6 +18,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+//@dynamic comments;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -32,6 +34,12 @@
     newPost.commentCount = @(0);
     
     [newPost saveInBackgroundWithBlock: completion];
+}
+
+- (void) postComment: ( Comment *)comment withCompletion: (PFBooleanResultBlock _Nullable)completion {
+    // help
+//    [self.comments addObject:comment];
+    
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {

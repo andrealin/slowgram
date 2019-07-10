@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "Parse/Parse.h"
 #import "Parse/PFImageView.h"
+#import "CommentViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *photoView;
@@ -40,6 +41,14 @@
     // Convert Date to String
     self.timestampLabel.text = [formatter stringFromDate:date];
 //    self.createdAtString = date.shortTimeAgoSinceNow;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([@"commentSegue" isEqualToString:segue.identifier]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        CommentViewController *commentViewController = (CommentViewController*)navigationController.topViewController;
+        commentViewController.post = self.post;
+    }
 }
 
 /*

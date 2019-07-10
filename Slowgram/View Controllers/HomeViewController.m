@@ -131,6 +131,7 @@ InfiniteScrollActivityView *loadingMoreView;
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = post;
     }
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
