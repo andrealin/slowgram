@@ -24,6 +24,8 @@
 @implementation HomeViewController
 InfiniteScrollActivityView *loadingMoreView;
 
+NSString *HeaderViewIdentifier = @"TableViewHeaderView";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -44,6 +46,8 @@ InfiniteScrollActivityView *loadingMoreView;
     UIEdgeInsets insets = self.tableView.contentInset;
     insets.bottom += InfiniteScrollActivityView.defaultHeight;
     self.tableView.contentInset = insets;
+    
+    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:HeaderViewIdentifier];
         
     // Do any additional setup after loading the view.
     // construct query
@@ -109,15 +113,39 @@ InfiniteScrollActivityView *loadingMoreView;
     }];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.posts.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SlowgramCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SlowgramCell" forIndexPath:indexPath];
-    Post *post = self.posts[indexPath.row];
+    Post *post = self.posts[indexPath.section];
     [cell updateWithPost:post];
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
+    Post *post = self.posts[section];
+    
+    // Format and set createdAtString
+    NSDate *date = [post createdAt];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    // Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    
+    header.textLabel.text = [NSString stringWithFormat:@"%@ %@", post.author[@"username"], [formatter stringFromDate:date]];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
