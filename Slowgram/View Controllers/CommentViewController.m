@@ -25,7 +25,9 @@
 - (IBAction)commentClicked:(id)sender {
     // comment
     NSString *caption = self.commentView.text;
-    [self dismissViewControllerAnimated:true completion:nil];
+    [self.post postComment:caption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }];
 }
 
 /*

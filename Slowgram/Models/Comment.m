@@ -7,7 +7,6 @@
 //
 
 #import "Comment.h"
-#import "Post.h"
 
 @implementation Comment
 
@@ -16,23 +15,9 @@
 @dynamic userID;
 @dynamic author;
 @dynamic caption;
-//@dynamic post;
 
 + (nonnull NSString *)parseClassName {
     return @"Comment";
 }
 
-
-+ (void)postComment:(Post *)post withCaption:(NSString *)caption withCompletion:(PFBooleanResultBlock)completion {
-    // help
-    Comment *newComment = [Comment new];
-    newComment.author = [PFUser currentUser];
-//    newComment.post = post;
-    newComment.caption = caption;
-    
-    [newComment saveInBackgroundWithBlock: completion];
-
-//    [post postComment:newComment];
-    
-}
 @end

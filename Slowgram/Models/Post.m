@@ -18,7 +18,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
-//@dynamic comments;
+@dynamic comments;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -32,13 +32,24 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    newPost.comments = [[NSMutableArray alloc] init];
     
     [newPost saveInBackgroundWithBlock: completion];
 }
 
-- (void) postComment: ( Comment *)comment withCompletion: (PFBooleanResultBlock _Nullable)completion {
+- (void) postComment: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock _Nullable)completion {
     // help
-//    [self.comments addObject:comment];
+    Comment *newComment = [Comment new];
+    newComment.author = [PFUser currentUser];
+//    newComment.post = post;
+    newComment.caption = caption;
+    
+    [newComment saveInBackgroundWithBlock: completion];
+    
+    [self addUniqueObject:newComment
+                   forKey:@"comments"];
+
+    [self saveInBackgroundWithBlock: completion];
     
 }
 

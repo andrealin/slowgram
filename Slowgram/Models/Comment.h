@@ -7,7 +7,6 @@
 //
 
 #import <Parse/Parse.h>
-#import "Post.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,9 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) PFUser *author;
 
 @property (nonatomic, strong) NSString *caption;
-//@property (nonatomic, strong) Post *post;
-
-//+ (void) postComment: ( Post * _Nullable )post withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
 

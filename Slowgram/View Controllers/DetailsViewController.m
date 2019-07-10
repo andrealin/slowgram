@@ -10,11 +10,13 @@
 #import "Parse/Parse.h"
 #import "Parse/PFImageView.h"
 #import "CommentViewController.h"
+#import "Comment.h"
 
-@interface DetailsViewController ()
+@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet PFImageView *photoView;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -22,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     NSLog(@"details view loading");
     
@@ -41,6 +46,8 @@
     // Convert Date to String
     self.timestampLabel.text = [formatter stringFromDate:date];
 //    self.createdAtString = date.shortTimeAgoSinceNow;
+    
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -48,6 +55,7 @@
         UINavigationController *navigationController = [segue destinationViewController];
         CommentViewController *commentViewController = (CommentViewController*)navigationController.topViewController;
         commentViewController.post = self.post;
+
     }
 }
 
@@ -60,5 +68,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"%tu", self.post.comments.count);
+    return self.post.comments.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
+    Comment *comment = self.post.comments[indexPath.row];
+//    cell.textLabel.text = comment.caption;
+    cell.textLabel.text = comment.objectId;
+    NSLog(@"cell");
+    return cell;
+}
+
+
 
 @end
