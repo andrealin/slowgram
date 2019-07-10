@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray<Comment *> *comments;
 
 @end
 
@@ -47,6 +48,29 @@
     self.timestampLabel.text = [formatter stringFromDate:date];
 //    self.createdAtString = date.shortTimeAgoSinceNow;
     
+    // Do any additional setup after loading the view.
+    // construct query
+    PFQuery *postQuery = [Comment query];
+    [postQuery orderByDescending:@"createdAt"];
+//    [postQuery includeKey:@"author"];
+    [postQuery whereKey:@"postID" equalTo:self.post.objectId];
+    postQuery.limit = 20;
+    //    postQuery.limit = 4;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Comment *> * _Nullable comments, NSError * _Nullable error) {
+        if (comments) {
+            // do something with the data fetched
+            self.comments = comments;
+            
+            [self.tableView reloadData];
+        }
+        else {
+            // handle error
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    
     [self.tableView reloadData];
 }
 
@@ -70,16 +94,13 @@
 */
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%tu", self.post.comments.count);
-    return self.post.comments.count;
+    return self.comments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
-    Comment *comment = self.post.comments[indexPath.row];
-//    cell.textLabel.text = comment.caption;
-    cell.textLabel.text = comment.objectId;
-    NSLog(@"cell");
+    Comment *comment = self.comments[indexPath.row];
+    cell.textLabel.text = comment.caption;
     return cell;
 }
 

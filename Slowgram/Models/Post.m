@@ -32,7 +32,6 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
-    newPost.comments = [[NSMutableArray alloc] init];
     
     [newPost saveInBackgroundWithBlock: completion];
 }
@@ -41,16 +40,11 @@
     // help
     Comment *newComment = [Comment new];
     newComment.author = [PFUser currentUser];
-//    newComment.post = post;
     newComment.caption = caption;
+    newComment.postID = self.objectId;
     
     [newComment saveInBackgroundWithBlock: completion];
-    
-    [self addUniqueObject:newComment
-                   forKey:@"comments"];
-
-    [self saveInBackgroundWithBlock: completion];
-    
+        
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
