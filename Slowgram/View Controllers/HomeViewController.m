@@ -154,7 +154,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         // segue from instagram photo to details
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Post *post = self.posts[indexPath.row];
+        Post *post = self.posts[indexPath.section];
         
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = post;
