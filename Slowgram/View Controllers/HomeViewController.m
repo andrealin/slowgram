@@ -180,7 +180,7 @@ InfiniteScrollActivityView *loadingMoreView;
             self.posts = [self.posts arrayByAddingObjectsFromArray:posts];
             
             // Update flag
-//            self.isMoreDataLoading = false;
+            self.isMoreDataLoading = false;
             
             [self.tableView reloadData];
 
