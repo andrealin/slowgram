@@ -241,6 +241,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-GF-GfI">
                                         <rect key="frame" x="291" y="440" width="30" height="30"/>
                                         <state key="normal" title="Like"/>
+                                        <connections>
+                                            <action selector="likeClicked:" destination="vfx-Tc-Ahb" eventType="touchUpInside" id="Lih-9Q-tBm"/>
+                                        </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sad-Md-Je0">
                                         <rect key="frame" x="0.0" y="478" width="375" height="125"/>
@@ -289,6 +292,7 @@
                     </view>
                     <connections>
                         <outlet property="captionLabel" destination="P84-mF-n0A" id="4na-7A-C6p"/>
+                        <outlet property="likesCountButton" destination="d0Y-zr-azf" id="VdG-1s-nM9"/>
                         <outlet property="photoView" destination="k6G-Rh-1gF" id="sd4-vb-uH5"/>
                         <outlet property="tableView" destination="Sad-Md-Je0" id="3wm-Jl-mrY"/>
                         <outlet property="timestampLabel" destination="Ye7-RF-cUl" id="J0p-Cy-fwF"/>

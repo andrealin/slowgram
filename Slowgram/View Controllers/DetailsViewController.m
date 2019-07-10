@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray<Comment *> *comments;
+@property (weak, nonatomic) IBOutlet UIButton *likesCountButton;
 
 @end
 
@@ -72,6 +73,8 @@
     }];
     
     [self.tableView reloadData];
+    [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -81,6 +84,45 @@
         commentViewController.post = self.post;
 
     }
+}
+- (IBAction)likeClicked:(id)sender {
+    PFRelation *relation = [PFUser.currentUser relationForKey:@"likes"];
+    PFQuery *query = relation.query;
+    [query whereKey:@"objectId" equalTo:self.post.objectId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            if (posts.count > 0) { // already liked, now unliking
+                [relation removeObject:self.post];
+                [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    [self.post incrementKey:@"likeCount" byAmount:@(-1)];
+                    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+                    }];
+                }];
+                
+            }
+            else { // liking
+                [relation addObject:self.post];
+                [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    [self.post incrementKey:@"likeCount" byAmount:@(1)];
+                    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                        [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+                    }];
+                }];
+
+            }
+        }
+        else {
+            // handle error
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    
+    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+    }];
+    
 }
 
 /*
