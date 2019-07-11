@@ -27,7 +27,6 @@
     [self.photoView setUserInteractionEnabled:YES];
 }
 - (void) didTapPicture:(UITapGestureRecognizer *)sender {
-    NSLog(@"tap triggered");
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;

@@ -33,11 +33,7 @@
     DetailsHeaderCell *header = [self.tableView dequeueReusableCellWithIdentifier:@"header"];
     self.header = header;
     
-    NSLog(@"details view loading");
-    
     // Do any additional setup after loading the view.
-   
-    
     PFRelation *relation = [self.post relationForKey:@"commentRelations"];
     PFQuery *query = relation.query;
     [query orderByDescending:@"createdAt"];
@@ -119,7 +115,6 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"number of section");
     return 1;
 }
 
@@ -135,9 +130,6 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSLog(@"view for header");
-    
-    
     self.header.photoView.file = self.post[@"image"];
     [self.header.photoView loadInBackground];
     self.header.captionLabel.text = self.post.caption;

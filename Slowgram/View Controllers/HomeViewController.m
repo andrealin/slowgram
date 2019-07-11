@@ -198,7 +198,6 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     // load twenty more posts past the last post loaded
     Post *post = self.posts[self.posts.count-1];
     NSDate *dateOfLastPost = post.createdAt;
-    NSLog(@"%@", dateOfLastPost);
     [postQuery whereKey:@"createdAt" lessThan:dateOfLastPost];
     postQuery.limit = 20;
 //    postQuery.limit = 4;
