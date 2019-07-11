@@ -80,6 +80,12 @@
     [header.profilePhotoView addGestureRecognizer:profileTapGestureRecognizer];
     [header.profilePhotoView setUserInteractionEnabled:YES];
     
+    PFUser *user = PFUser.currentUser;
+    if ( user[@"profilePicture"] ) {
+        header.profilePhotoView.file = user[@"profilePicture"];
+        [header.profilePhotoView loadInBackground];
+    }
+    
     self.header = header;
     
     return header;
@@ -114,8 +120,14 @@
     self.selectedImage = editedImage;
     self.header.profilePhotoView.image = self.selectedImage;
     
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    PFUser *user = PFUser.currentUser;
+    user[@"profilePicture"] = [Post getPFFileFromImage:[self resizeImage:self.selectedImage withSize:CGSizeMake(300.0, 300.0)]];
+    
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        // Dismiss UIImagePickerController to go back to your original view controller
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -131,4 +143,6 @@
     
     return newImage;
 }
+
+
 @end

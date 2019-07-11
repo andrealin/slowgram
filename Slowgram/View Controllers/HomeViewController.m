@@ -33,6 +33,9 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedSectionHeaderHeight = 25;
+    
     // refresh control
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -140,11 +143,12 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     header.usernameLabel.text = post.author[@"username"];
     header.dateLabel.text = [formatter stringFromDate:date];
     
+    if ( post.author[@"profilePicture"] ) {
+        header.profilePhotoView.file = post.author[@"profilePicture"];
+        [header.profilePhotoView loadInBackground];
+    }
+    
     return header;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
