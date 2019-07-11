@@ -8,6 +8,7 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+@import UITextView_Placeholder;
 
 @interface ComposeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
@@ -25,6 +26,8 @@
     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPicture:)];
     [self.photoView addGestureRecognizer:profileTapGestureRecognizer];
     [self.photoView setUserInteractionEnabled:YES];
+    
+    self.captionView.placeholder = @"Write a caption...";
 }
 - (void) didTapPicture:(UITapGestureRecognizer *)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];

@@ -379,20 +379,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="63D-XP-O7w">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="63D-XP-O7w">
                                 <rect key="frame" x="16" y="82" width="117" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="5Mk-ic-AZH"/>
+                                    <constraint firstAttribute="width" constant="117" id="IFh-Lx-xWt"/>
+                                </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d1D-Ee-0xI">
-                                <rect key="frame" x="141" y="82" width="218" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d1D-Ee-0xI">
+                                <rect key="frame" x="149" y="82" width="210" height="569"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d1D-Ee-0xI" firstAttribute="leading" secondItem="63D-XP-O7w" secondAttribute="trailing" constant="16" id="12R-64-nD1"/>
+                            <constraint firstItem="63D-XP-O7w" firstAttribute="top" secondItem="eIC-EL-EVS" secondAttribute="topMargin" constant="18" id="24I-tS-a6x"/>
+                            <constraint firstItem="d1D-Ee-0xI" firstAttribute="top" secondItem="63D-XP-O7w" secondAttribute="top" id="PeS-hb-Sfc"/>
+                            <constraint firstAttribute="trailing" secondItem="d1D-Ee-0xI" secondAttribute="trailing" constant="16" id="dbn-VE-GLV"/>
+                            <constraint firstItem="63D-XP-O7w" firstAttribute="leading" secondItem="eIC-EL-EVS" secondAttribute="leadingMargin" id="rTY-7m-YqM"/>
+                            <constraint firstAttribute="bottom" secondItem="d1D-Ee-0xI" secondAttribute="bottom" constant="16" id="tlF-XA-EQT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UAx-bh-kXo"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uhb-eB-5J2">
@@ -414,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1P-JF-EQk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367" y="834"/>
+            <point key="canvasLocation" x="2365.5999999999999" y="833.43328335832086"/>
         </scene>
         <!--Home-->
         <scene sceneID="t9j-hD-GAI">
