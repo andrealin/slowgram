@@ -142,6 +142,7 @@
     //    self.createdAtString = date.shortTimeAgoSinceNow;
     
     [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+    header.backgroundColor = [UIColor whiteColor];
     
     return self.header;
 }
