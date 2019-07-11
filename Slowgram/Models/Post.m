@@ -18,7 +18,6 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
-@dynamic comments;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -41,7 +40,6 @@
     Comment *newComment = [Comment new];
     newComment.author = [PFUser currentUser];
     newComment.caption = caption;
-    newComment.postID = self.objectId;
     
     // Add a relation between the Post and Comment
     PFRelation *relation = [self relationForKey:@"commentRelations"];

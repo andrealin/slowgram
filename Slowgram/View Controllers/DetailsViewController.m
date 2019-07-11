@@ -48,15 +48,7 @@
     // Convert Date to String
     self.timestampLabel.text = [formatter stringFromDate:date];
 //    self.createdAtString = date.shortTimeAgoSinceNow;
-    
-    // Do any additional setup after loading the view.
-    // construct query
-//    PFQuery *postQuery = [Comment query];
-//    [postQuery orderByDescending:@"createdAt"];
-////    [postQuery includeKey:@"author"];
-//    [postQuery whereKey:@"postID" equalTo:self.post.objectId];
-//    postQuery.limit = 20;
-    //    postQuery.limit = 4;
+ 
     
     PFRelation *relation = [self.post relationForKey:@"commentRelations"];
     PFQuery *query = relation.query;
@@ -67,9 +59,6 @@
         if (comments) {
             // do something with the data fetched
             self.comments = comments;
-            
-            NSLog(@"%@", comments);
-            
             [self.tableView reloadData];
         }
         else {
