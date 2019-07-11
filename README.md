@@ -49,19 +49,23 @@ Here's a walkthrough of implemented user stories:
 
 Required Features:
 
-<img src='http://g.recordit.co/rAjfR7DDrV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/rAjfR7DDrV.gif' title='Video Walkthrough' width='200' alt='Video Walkthrough' />
 
 Accounts:
 
-<img src='http://g.recordit.co/6c4zqiN0M6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/6c4zqiN0M6.gif' title='Video Walkthrough' width='200' alt='Video Walkthrough' />
 
 Profile Tab:
 
-<img src='http://g.recordit.co/sFxeIErZhA.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/sFxeIErZhA.gif' title='Video Walkthrough' width='200' alt='Video Walkthrough' />
 
 Comments and Likes:
 
 <img src='http://g.recordit.co/NBXz8T7u9U.gif' title='Video Walkthrough' width='200' alt='Video Walkthrough' />
+
+Infinite Scroll:
+
+<img src='http://g.recordit.co/eLjUM16rQw.gif' title='Video Walkthrough' width='200' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
