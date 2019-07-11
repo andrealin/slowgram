@@ -24,6 +24,17 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    layout.minimumInteritemSpacing = 1;
+    layout.minimumLineSpacing = 1;
+    
+    CGFloat postersPerLine = 3;
+    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
+    CGFloat itemHeight = itemWidth;
+    
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
     // Do any additional setup after loading the view.'
     // construct query
     PFQuery *postQuery = [Post query];
