@@ -32,6 +32,7 @@
 }
 
 - (void)updateWithPost:(Post *)post {
+    // update slowgram cell images and label in the home timeline given post model
     self.photoView.file = post[@"image"];
     [self.photoView loadInBackground];
     self.captionLabel.text = post.caption;

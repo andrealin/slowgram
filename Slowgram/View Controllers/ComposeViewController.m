@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+    // Tap image placeholder to add picture
     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPicture:)];
     [self.photoView addGestureRecognizer:profileTapGestureRecognizer];
     [self.photoView setUserInteractionEnabled:YES];

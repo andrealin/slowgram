@@ -30,10 +30,7 @@
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionHeaderHeight = 25;
     
-    DetailsHeaderCell *header = [self.tableView dequeueReusableCellWithIdentifier:@"header"];
-    self.header = header;
-    
-    // Do any additional setup after loading the view.
+    // query for comments on this post
     PFRelation *relation = [self.post relationForKey:@"commentRelations"];
     PFQuery *query = relation.query;
     [query orderByDescending:@"createdAt"];
@@ -52,8 +49,6 @@
     }];
     
     [self.tableView reloadData];
-    [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
-
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -130,6 +125,9 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    DetailsHeaderCell *header = [self.tableView dequeueReusableCellWithIdentifier:@"header"];
+    self.header = header;
+    
     self.header.photoView.file = self.post[@"image"];
     [self.header.photoView loadInBackground];
     self.header.captionLabel.text = self.post.caption;
@@ -145,6 +143,8 @@
     // Convert Date to String
     self.header.timestampLabel.text = [formatter stringFromDate:date];
     //    self.createdAtString = date.shortTimeAgoSinceNow;
+    
+    [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
     
     return self.header;
 }

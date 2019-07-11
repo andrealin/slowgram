@@ -30,13 +30,13 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
     // refresh control
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
     
     // Set up Infinite Scroll loading indicator
     CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
@@ -50,15 +50,13 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:HeaderViewIdentifier];
         
-    // Do any additional setup after loading the view.
-    // construct query
+    // construct query for posts in the home timeline
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     postQuery.limit = 20;
-//    postQuery.limit = 4;
     
-    // fetch data asynchronously
+    // fetch data for home timeline posts asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             // do something with the data fetched
@@ -84,7 +82,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     [postQuery includeKey:@"author"];
     postQuery.limit = 20;
     
-    // fetch data asynchronously
+    // fetch data for the home timeline posts (top 20) asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             // do something with the data fetched
@@ -109,9 +107,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     appDelegate.window.rootViewController = loginViewController;
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
-    }];
+    [PFUser logOutInBackgroundWithBlock:nil];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -137,12 +133,13 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     NSDate *date = [post createdAt];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    // Configure output format
+    // Configure date output format
     formatter.dateStyle = NSDateFormatterShortStyle;
     formatter.timeStyle = NSDateFormatterNoStyle;
     
     header.usernameLabel.text = post.author[@"username"];
     header.dateLabel.text = [formatter stringFromDate:date];
+    
     return header;
 }
 
@@ -151,7 +148,6 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // help
     if ([@"detailsSegue" isEqualToString:segue.identifier]) {
         // segue from instagram photo to details
         UITableViewCell *tappedCell = sender;
@@ -161,7 +157,6 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = post;
     }
-    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -200,11 +195,10 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     NSDate *dateOfLastPost = post.createdAt;
     [postQuery whereKey:@"createdAt" lessThan:dateOfLastPost];
     postQuery.limit = 20;
-//    postQuery.limit = 4;
     
-    // fetch data asynchronously
+    // fetch data asynchronously for 20 more posts to add to the home timeline
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
-        if ([posts count] != 0) {
+        if ([posts count] != 0) { // while there are still more posts
             // do something with the data fetched
             self.posts = [self.posts arrayByAddingObjectsFromArray:posts];
             

@@ -36,7 +36,6 @@
 }
 
 - (void) postComment: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock _Nullable)completion {
-    // help
     Comment *newComment = [Comment new];
     newComment.author = [PFUser currentUser];
     newComment.caption = caption;
