@@ -110,7 +110,11 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     appDelegate.window.rootViewController = loginViewController;
-    [PFUser logOutInBackgroundWithBlock:nil];
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        if ( error ) {
+            // continue
+        }
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
