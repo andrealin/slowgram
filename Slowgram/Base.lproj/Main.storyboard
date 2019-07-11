@@ -286,50 +286,55 @@
                                                         <constraint firstAttribute="width" secondItem="k6G-Rh-1gF" secondAttribute="height" multiplier="1:1" id="zdU-0u-k3r"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Caption Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P84-mF-n0A">
-                                                    <rect key="frame" x="15" y="407.5" width="359" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P84-mF-n0A">
+                                                    <rect key="frame" x="8" y="405" width="359" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye7-RF-cUl">
-                                                    <rect key="frame" x="15" y="429.5" width="359" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye7-RF-cUl">
+                                                    <rect key="frame" x="8" y="427" width="359" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtE-96-UkY">
-                                                    <rect key="frame" x="15" y="377" width="67" height="32.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="67" id="X58-y9-jdb"/>
-                                                    </constraints>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtE-96-UkY">
+                                                    <rect key="frame" x="8" y="377" width="67" height="30"/>
                                                     <state key="normal" title="Comment"/>
                                                     <connections>
                                                         <segue destination="DSe-rZ-8jR" kind="presentation" identifier="commentSegue" id="SBE-jN-cfP"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-GF-GfI">
-                                                    <rect key="frame" x="311" y="377" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-GF-GfI">
+                                                    <rect key="frame" x="304" y="377" width="30" height="30"/>
                                                     <state key="normal" title="Like"/>
                                                     <connections>
                                                         <action selector="likeClicked:" destination="vfx-Tc-Ahb" eventType="touchUpInside" id="Lih-9Q-tBm"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0Y-zr-azf">
-                                                    <rect key="frame" x="344" y="377" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0Y-zr-azf">
+                                                    <rect key="frame" x="337" y="377" width="30" height="30"/>
                                                     <state key="normal" title="1"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="P84-mF-n0A" secondAttribute="trailing" constant="8" id="29j-Ze-2Dr"/>
+                                                <constraint firstItem="Ye7-RF-cUl" firstAttribute="trailing" secondItem="P84-mF-n0A" secondAttribute="trailing" id="2GW-Qf-IVR"/>
+                                                <constraint firstItem="d0Y-zr-azf" firstAttribute="trailing" secondItem="P84-mF-n0A" secondAttribute="trailing" id="2It-jl-Cq0"/>
                                                 <constraint firstItem="JtE-96-UkY" firstAttribute="top" secondItem="k6G-Rh-1gF" secondAttribute="bottom" constant="2" id="9mn-S3-Uin"/>
+                                                <constraint firstItem="fhj-GF-GfI" firstAttribute="firstBaseline" secondItem="JtE-96-UkY" secondAttribute="firstBaseline" id="C8b-uT-jwV"/>
                                                 <constraint firstItem="Ye7-RF-cUl" firstAttribute="top" secondItem="P84-mF-n0A" secondAttribute="bottom" constant="1.5" id="CCf-Fp-2cL"/>
                                                 <constraint firstAttribute="trailing" secondItem="k6G-Rh-1gF" secondAttribute="trailing" id="DTr-G5-GgP"/>
                                                 <constraint firstItem="P84-mF-n0A" firstAttribute="top" secondItem="JtE-96-UkY" secondAttribute="bottom" constant="-2" id="Qyd-5A-jbV"/>
+                                                <constraint firstItem="fhj-GF-GfI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JtE-96-UkY" secondAttribute="trailing" constant="8" id="Vhw-zp-6vu"/>
                                                 <constraint firstItem="k6G-Rh-1gF" firstAttribute="top" secondItem="ld5-iV-QtQ" secondAttribute="top" id="bax-Tq-UeU"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ye7-RF-cUl" secondAttribute="bottom" constant="8" id="cbl-Hw-FGx"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ye7-RF-cUl" secondAttribute="bottom" constant="8" id="cbl-Hw-FGx"/>
+                                                <constraint firstItem="P84-mF-n0A" firstAttribute="leading" secondItem="ld5-iV-QtQ" secondAttribute="leading" constant="8" id="hfS-Gi-KY3"/>
+                                                <constraint firstItem="JtE-96-UkY" firstAttribute="leading" secondItem="ld5-iV-QtQ" secondAttribute="leading" constant="8" id="mDF-yb-dhQ"/>
                                                 <constraint firstItem="k6G-Rh-1gF" firstAttribute="leading" secondItem="ld5-iV-QtQ" secondAttribute="leading" id="mV4-9b-h3n"/>
+                                                <constraint firstItem="d0Y-zr-azf" firstAttribute="firstBaseline" secondItem="JtE-96-UkY" secondAttribute="firstBaseline" id="nYn-j5-wZs"/>
+                                                <constraint firstItem="d0Y-zr-azf" firstAttribute="leading" secondItem="fhj-GF-GfI" secondAttribute="trailing" constant="3" id="ofo-yE-Q8y"/>
+                                                <constraint firstItem="Ye7-RF-cUl" firstAttribute="leading" secondItem="P84-mF-n0A" secondAttribute="leading" id="tNo-7E-1TU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -27,6 +27,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedSectionHeaderHeight = 25;
+    
     NSLog(@"details view loading");
     
     // Do any additional setup after loading the view.
@@ -113,6 +116,7 @@
 */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSLog(@"number of section");
     return 1;
 }
 
