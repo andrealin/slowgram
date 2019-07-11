@@ -30,6 +30,9 @@
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionHeaderHeight = 25;
     
+    DetailsHeaderCell *header = [self.tableView dequeueReusableCellWithIdentifier:@"header"];
+    self.header = header;
+    
     NSLog(@"details view loading");
     
     // Do any additional setup after loading the view.
@@ -133,12 +136,11 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     NSLog(@"view for header");
-    DetailsHeaderCell *header = [tableView dequeueReusableCellWithIdentifier:@"header"];
-    self.header = header;
     
-    header.photoView.file = self.post[@"image"];
-    [header.photoView loadInBackground];
-    header.captionLabel.text = self.post.caption;
+    
+    self.header.photoView.file = self.post[@"image"];
+    [self.header.photoView loadInBackground];
+    self.header.captionLabel.text = self.post.caption;
     
     // Format and set createdAtString
     NSDate *date = [self.post createdAt];
@@ -149,10 +151,10 @@
     formatter.timeStyle = NSDateFormatterNoStyle;
     
     // Convert Date to String
-    header.timestampLabel.text = [formatter stringFromDate:date];
+    self.header.timestampLabel.text = [formatter stringFromDate:date];
     //    self.createdAtString = date.shortTimeAgoSinceNow;
     
-    return header;
+    return self.header;
 }
 
 @end
