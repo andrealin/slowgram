@@ -15,6 +15,7 @@
 #import "DetailsViewController.h"
 #import "InfiniteScrollActivityView.h"
 #import "HeaderCell.h"
+#import "ComposeViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (strong, nonatomic) NSArray<Post *> *posts;
@@ -53,6 +54,11 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:HeaderViewIdentifier];
         
+    [self fetchData];
+    
+}
+
+- (void)fetchData {
     // construct query for posts in the home timeline
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
@@ -72,7 +78,6 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
 }
 // Makes a network request to get updated data
 // Updates the tableView with the new data
@@ -164,6 +169,12 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = post;
+    }
+    else if ([@"composeSegue" isEqualToString:segue.identifier]) {
+        
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeViewController = navigationController.topViewController;
+        composeViewController.homeViewController = self;
     }
 }
 

@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeViewController : UIViewController<UIImagePickerControllerDelegate>
+- (void)fetchData;
 
 @end
 

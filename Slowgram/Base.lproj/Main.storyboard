@@ -248,7 +248,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="QjP-cy-VEm">
                             <connections>
-                                <segue destination="gwO-D5-VG2" kind="presentation" id="nvW-G5-10R"/>
+                                <segue destination="gwO-D5-VG2" kind="presentation" identifier="composeSegue" id="nvW-G5-10R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
