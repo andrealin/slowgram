@@ -23,6 +23,7 @@
 		D28639AE22D6BE1A002F31C9 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639AD22D6BE1A002F31C9 /* CollectionCell.m */; };
 		D28639B122D7A8F2002F31C9 /* HeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639B022D7A8F2002F31C9 /* HeaderCell.m */; };
 		D28639B422D7AD0A002F31C9 /* ProfileHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639B322D7AD0A002F31C9 /* ProfileHeaderCell.m */; };
+		D28639B722D7B10D002F31C9 /* DetailsHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639B622D7B10D002F31C9 /* DetailsHeaderCell.m */; };
 		D2B58D8922D45BF3007A86B4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8822D45BF3007A86B4 /* Post.m */; };
 		D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */; };
 		D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBFFE322D5466A004AE350 /* DetailsViewController.m */; };
@@ -86,6 +87,8 @@
 		D28639B022D7A8F2002F31C9 /* HeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderCell.m; sourceTree = "<group>"; };
 		D28639B222D7AD0A002F31C9 /* ProfileHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderCell.h; sourceTree = "<group>"; };
 		D28639B322D7AD0A002F31C9 /* ProfileHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderCell.m; sourceTree = "<group>"; };
+		D28639B522D7B10D002F31C9 /* DetailsHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsHeaderCell.h; sourceTree = "<group>"; };
+		D28639B622D7B10D002F31C9 /* DetailsHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsHeaderCell.m; sourceTree = "<group>"; };
 		D2B58D8722D45BF3007A86B4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		D2B58D8822D45BF3007A86B4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		D2B58D8B22D4627C007A86B4 /* SlowgramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowgramCell.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				D28639B022D7A8F2002F31C9 /* HeaderCell.m */,
 				D28639B222D7AD0A002F31C9 /* ProfileHeaderCell.h */,
 				D28639B322D7AD0A002F31C9 /* ProfileHeaderCell.m */,
+				D28639B522D7B10D002F31C9 /* DetailsHeaderCell.h */,
+				D28639B622D7B10D002F31C9 /* DetailsHeaderCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				D2DBFFED22D56DB7004AE350 /* CommentViewController.m in Sources */,
 				D2DBFFE722D5580D004AE350 /* InfiniteScrollActivityView.m in Sources */,
 				D257B97B22D6BD860032582F /* ProfileViewController.m in Sources */,
+				D28639B722D7B10D002F31C9 /* DetailsHeaderCell.m in Sources */,
 				D28639AE22D6BE1A002F31C9 /* CollectionCell.m in Sources */,
 				D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */,
 			);

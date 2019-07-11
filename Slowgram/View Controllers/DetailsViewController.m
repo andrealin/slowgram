@@ -11,15 +11,12 @@
 #import "Parse/PFImageView.h"
 #import "CommentViewController.h"
 #import "Comment.h"
+#import "DetailsHeaderCell.h"
 
 @interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet PFImageView *photoView;
-@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray<Comment *> *comments;
-@property (weak, nonatomic) IBOutlet UIButton *likesCountButton;
-
+@property (strong, nonatomic) DetailsHeaderCell *header;
 @end
 
 @implementation DetailsViewController
@@ -33,22 +30,7 @@
     NSLog(@"details view loading");
     
     // Do any additional setup after loading the view.
-    self.photoView.file = self.post[@"image"];
-    [self.photoView loadInBackground];
-    self.captionLabel.text = self.post.caption;
-    
-    // Format and set createdAtString
-    NSDate *date = [self.post createdAt];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    // Configure output format
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    
-    // Convert Date to String
-    self.timestampLabel.text = [formatter stringFromDate:date];
-//    self.createdAtString = date.shortTimeAgoSinceNow;
- 
+   
     
     PFRelation *relation = [self.post relationForKey:@"commentRelations"];
     PFQuery *query = relation.query;
@@ -68,7 +50,7 @@
     }];
     
     [self.tableView reloadData];
-    [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+    [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
 
 }
 
@@ -92,7 +74,7 @@
                 [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     [self.post incrementKey:@"likeCount" byAmount:@(-1)];
                     [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                        [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+                        [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
                     }];
                 }];
                 
@@ -102,7 +84,7 @@
                 [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     [self.post incrementKey:@"likeCount" byAmount:@(1)];
                     [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                        [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+                        [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
                     }];
                 }];
 
@@ -115,7 +97,7 @@
     }];
     
     [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        [self.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
+        [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
     }];
     
 }
@@ -130,6 +112,10 @@
 }
 */
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.comments.count;
 }
@@ -141,5 +127,28 @@
     return cell;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSLog(@"view for header");
+    DetailsHeaderCell *header = [tableView dequeueReusableCellWithIdentifier:@"header"];
+    self.header = header;
+    
+    header.photoView.file = self.post[@"image"];
+    [header.photoView loadInBackground];
+    header.captionLabel.text = self.post.caption;
+    
+    // Format and set createdAtString
+    NSDate *date = [self.post createdAt];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    // Configure output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    
+    // Convert Date to String
+    header.timestampLabel.text = [formatter stringFromDate:date];
+    //    self.createdAtString = date.shortTimeAgoSinceNow;
+    
+    return header;
+}
 
 @end
