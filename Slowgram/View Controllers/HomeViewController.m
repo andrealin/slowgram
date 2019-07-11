@@ -205,7 +205,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
-        if (posts) {
+        if ([posts count] != 0) {
             // do something with the data fetched
             self.posts = [self.posts arrayByAddingObjectsFromArray:posts];
             
