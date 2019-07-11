@@ -17,7 +17,7 @@
 #import "HeaderCell.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
-@property (strong, nonatomic) NSArray *posts;
+@property (strong, nonatomic) NSArray<Post *> *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
 @end

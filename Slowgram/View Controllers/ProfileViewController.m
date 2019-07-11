@@ -14,7 +14,7 @@
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) NSArray *posts;
+@property (strong, nonatomic) NSArray<Post *> *posts;
 
 @end
 
