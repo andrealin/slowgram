@@ -157,6 +157,11 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     header.usernameLabel.text = post.author[@"username"];
     header.dateLabel.text = [formatter stringFromDate:date];
     
+    // make profile pic a circle
+    CALayer *imageLayer = header.profilePhotoView.layer;
+    [imageLayer setCornerRadius:header.profilePhotoView.frame.size.width/2];
+    [imageLayer setMasksToBounds:YES];
+    
     if ( post.author[@"profilePicture"] ) {
         header.profilePhotoView.file = post.author[@"profilePicture"];
         [header.profilePhotoView loadInBackground];
