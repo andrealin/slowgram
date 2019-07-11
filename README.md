@@ -47,13 +47,13 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-Required Features
+Required Features:
 
 <img src='http://g.recordit.co/rAjfR7DDrV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Accounts
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/6c4zqiN0M6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Profile Tab
 
