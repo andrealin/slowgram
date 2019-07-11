@@ -471,15 +471,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jHz-96-mnv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jHz-96-mnv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jHz-96-mnv" secondAttribute="bottom" id="HIK-FN-vbY"/>
+                            <constraint firstItem="jHz-96-mnv" firstAttribute="leading" secondItem="pWU-IZ-gvk" secondAttribute="leading" id="ZZu-mm-lwR"/>
+                            <constraint firstItem="jHz-96-mnv" firstAttribute="top" secondItem="K2F-fY-g3L" secondAttribute="top" id="azO-bA-bcq"/>
+                            <constraint firstAttribute="trailing" secondItem="jHz-96-mnv" secondAttribute="trailing" id="xWq-t7-tV8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K2F-fY-g3L"/>
                     </view>
                     <navigationItem key="navigationItem" id="xO1-3S-f4c">
