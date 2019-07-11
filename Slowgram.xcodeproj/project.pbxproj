@@ -11,6 +11,7 @@
 		D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B1D22D4131E003DF641 /* LoginViewController.m */; };
 		D2092B2122D41B0C003DF641 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B2022D41B0C003DF641 /* HomeViewController.m */; };
 		D2092B2422D455A8003DF641 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2092B2322D455A8003DF641 /* ComposeViewController.m */; };
+		D257B97B22D6BD860032582F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D257B97A22D6BD860032582F /* ProfileViewController.m */; };
 		D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C7C22D406440045CA8C /* AppDelegate.m */; };
 		D2615C8322D406440045CA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8122D406440045CA8C /* Main.storyboard */; };
 		D2615C8522D406450045CA8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2615C8422D406450045CA8C /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		D2615C9522D406450045CA8C /* SlowgramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9422D406450045CA8C /* SlowgramTests.m */; };
 		D2615CA022D406450045CA8C /* SlowgramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9F22D406450045CA8C /* SlowgramUITests.m */; };
 		D270F991744D1F677D08E6CD /* Pods_SlowgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */; };
+		D28639AE22D6BE1A002F31C9 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639AD22D6BE1A002F31C9 /* CollectionCell.m */; };
 		D2B58D8922D45BF3007A86B4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8822D45BF3007A86B4 /* Post.m */; };
 		D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */; };
 		D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBFFE322D5466A004AE350 /* DetailsViewController.m */; };
@@ -60,6 +62,8 @@
 		D2092B2022D41B0C003DF641 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D2092B2222D455A8003DF641 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		D2092B2322D455A8003DF641 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		D257B97922D6BD860032582F /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D257B97A22D6BD860032582F /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D2615C7822D406440045CA8C /* Slowgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slowgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2615C7B22D406440045CA8C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2615C7C22D406440045CA8C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		D2615C9B22D406450045CA8C /* SlowgramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowgramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2615C9F22D406450045CA8C /* SlowgramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlowgramUITests.m; sourceTree = "<group>"; };
 		D2615CA122D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28639AC22D6BE1A002F31C9 /* CollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		D28639AD22D6BE1A002F31C9 /* CollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		D2B58D8722D45BF3007A86B4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		D2B58D8822D45BF3007A86B4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		D2B58D8B22D4627C007A86B4 /* SlowgramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowgramCell.h; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 				D2DBFFE322D5466A004AE350 /* DetailsViewController.m */,
 				D2DBFFEB22D56DB7004AE350 /* CommentViewController.h */,
 				D2DBFFEC22D56DB7004AE350 /* CommentViewController.m */,
+				D257B97922D6BD860032582F /* ProfileViewController.h */,
+				D257B97A22D6BD860032582F /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -219,6 +227,8 @@
 				D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */,
 				D2DBFFE522D5580D004AE350 /* InfiniteScrollActivityView.h */,
 				D2DBFFE622D5580D004AE350 /* InfiniteScrollActivityView.m */,
+				D28639AC22D6BE1A002F31C9 /* CollectionCell.h */,
+				D28639AD22D6BE1A002F31C9 /* CollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,6 +476,8 @@
 				D2092B2122D41B0C003DF641 /* HomeViewController.m in Sources */,
 				D2DBFFED22D56DB7004AE350 /* CommentViewController.m in Sources */,
 				D2DBFFE722D5580D004AE350 /* InfiniteScrollActivityView.m in Sources */,
+				D257B97B22D6BD860032582F /* ProfileViewController.m in Sources */,
+				D28639AE22D6BE1A002F31C9 /* CollectionCell.m in Sources */,
 				D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
