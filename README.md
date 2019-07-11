@@ -51,13 +51,13 @@ Required Features:
 
 <img src='http://g.recordit.co/rAjfR7DDrV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Accounts
+Accounts:
 
 <img src='http://g.recordit.co/6c4zqiN0M6.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Profile Tab
+Profile Tab:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/sFxeIErZhA.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 Comments and Likes
 
