@@ -82,6 +82,11 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeaderCell *header = [self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
     
+    // make profile pic a circle
+    CALayer *imageLayer = header.profilePhotoView.layer;
+    [imageLayer setCornerRadius:header.profilePhotoView.frame.size.width/2];
+    [imageLayer setMasksToBounds:YES];
+    
     if (self.user) {
         header.usernameLabel.text = self.user[@"username"];
         if ( self.user[@"profilePicture"] ) {
