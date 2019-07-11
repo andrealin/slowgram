@@ -203,7 +203,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0p-Lh-Bcj">
-                                                    <rect key="frame" x="20" y="404" width="335" height="20.5"/>
+                                                    <rect key="frame" x="20" y="383" width="335" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -211,11 +211,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="w5f-nm-cCj" firstAttribute="top" secondItem="MXO-uP-O4n" secondAttribute="top" id="Fuh-zH-VLr"/>
-                                                <constraint firstItem="v0p-Lh-Bcj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="w5f-nm-cCj" secondAttribute="bottom" constant="8" symbolic="YES" id="KaE-py-Gge"/>
+                                                <constraint firstItem="v0p-Lh-Bcj" firstAttribute="top" secondItem="w5f-nm-cCj" secondAttribute="bottom" constant="8" symbolic="YES" id="KaE-py-Gge"/>
                                                 <constraint firstItem="w5f-nm-cCj" firstAttribute="leading" secondItem="MXO-uP-O4n" secondAttribute="leading" id="aUh-mS-JJx"/>
                                                 <constraint firstAttribute="trailing" secondItem="v0p-Lh-Bcj" secondAttribute="trailing" constant="20" symbolic="YES" id="eFU-7v-Gr6"/>
                                                 <constraint firstItem="v0p-Lh-Bcj" firstAttribute="leading" secondItem="MXO-uP-O4n" secondAttribute="leading" constant="20" symbolic="YES" id="jEn-Mh-Alt"/>
-                                                <constraint firstAttribute="bottom" secondItem="v0p-Lh-Bcj" secondAttribute="bottom" constant="20" symbolic="YES" id="sDW-p9-RJP"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="v0p-Lh-Bcj" secondAttribute="bottom" constant="8" id="sDW-p9-RJP"/>
                                                 <constraint firstAttribute="trailing" secondItem="w5f-nm-cCj" secondAttribute="trailing" id="wJp-5D-hum"/>
                                             </constraints>
                                         </tableViewCellContentView>
