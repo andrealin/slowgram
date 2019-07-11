@@ -51,18 +51,24 @@
     
     // Do any additional setup after loading the view.
     // construct query
-    PFQuery *postQuery = [Comment query];
-    [postQuery orderByDescending:@"createdAt"];
-//    [postQuery includeKey:@"author"];
-    [postQuery whereKey:@"postID" equalTo:self.post.objectId];
-    postQuery.limit = 20;
+//    PFQuery *postQuery = [Comment query];
+//    [postQuery orderByDescending:@"createdAt"];
+////    [postQuery includeKey:@"author"];
+//    [postQuery whereKey:@"postID" equalTo:self.post.objectId];
+//    postQuery.limit = 20;
     //    postQuery.limit = 4;
     
+    PFRelation *relation = [self.post relationForKey:@"commentRelations"];
+    PFQuery *query = relation.query;
+    [query orderByDescending:@"createdAt"];
+    
     // fetch data asynchronously
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Comment *> * _Nullable comments, NSError * _Nullable error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray<Comment *> * _Nullable comments, NSError * _Nullable error) {
         if (comments) {
             // do something with the data fetched
             self.comments = comments;
+            
+            NSLog(@"%@", comments);
             
             [self.tableView reloadData];
         }

@@ -43,8 +43,15 @@
     newComment.caption = caption;
     newComment.postID = self.objectId;
     
-    [newComment saveInBackgroundWithBlock: completion];
-        
+    // Add a relation between the Post and Comment
+    PFRelation *relation = [self relationForKey:@"commentRelations"];
+    [relation addObject:newComment];
+    
+    [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [relation addObject:newComment];
+        [self saveInBackgroundWithBlock:completion];
+    }];
+
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
