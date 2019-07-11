@@ -28,7 +28,7 @@
     self.tableView.dataSource = self;
     
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedSectionHeaderHeight = 25;
+    self.tableView.estimatedSectionHeaderHeight = 10;
     
     // query for comments on this post
     PFRelation *relation = [self.post relationForKey:@"commentRelations"];
