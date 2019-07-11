@@ -7,18 +7,28 @@
 //
 
 #import "HeaderCell.h"
+#import "ProfileHeaderCell.h"
 
 @implementation HeaderCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPicture:)];
+    [self.profilePhotoView addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profilePhotoView setUserInteractionEnabled:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) didTapPicture:(UITapGestureRecognizer *)sender {
+
+   
+    [self.delegate didClickPicture:self.post.author];
 }
 
 @end

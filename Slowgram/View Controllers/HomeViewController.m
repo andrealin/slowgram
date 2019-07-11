@@ -16,8 +16,9 @@
 #import "InfiniteScrollActivityView.h"
 #import "HeaderCell.h"
 #import "ComposeViewController.h"
+#import "ProfileViewController.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ComposeViewControllerDelegate>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ComposeViewControllerDelegate, HeaderCellDelegate>
 @property (strong, nonatomic) NSArray<Post *> *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
@@ -161,7 +162,16 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         [header.profilePhotoView loadInBackground];
     }
     
+    header.post = post;
+    header.delegate = self;
+    
+    header.backgroundColor = [UIColor whiteColor];
     return header;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 5;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -179,6 +189,10 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeViewController = navigationController.topViewController;
         composeViewController.delegate = self;
+    }
+    else if ([@"profileSegue" isEqualToString:segue.identifier]) {
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.user = sender;
     }
 }
 
@@ -240,5 +254,10 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         }
     }];
 }
+
+- (void)didClickPicture:(PFUser *)user {
+    [self performSegueWithIdentifier:@"profileSegue" sender:user];
+}
+
 
 @end

@@ -43,7 +43,14 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
+    
+    if ( self.user ) {
+        [postQuery whereKey:@"author" equalTo:self.user];
+    }
+    else {
+        [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
+    }
+    
     
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
@@ -74,17 +81,28 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeaderCell *header = [self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
-    header.usernameLabel.text = PFUser.currentUser[@"username"];
     
-    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPicture:)];
-    [header.profilePhotoView addGestureRecognizer:profileTapGestureRecognizer];
-    [header.profilePhotoView setUserInteractionEnabled:YES];
-    
-    PFUser *user = PFUser.currentUser;
-    if ( user[@"profilePicture"] ) {
-        header.profilePhotoView.file = user[@"profilePicture"];
-        [header.profilePhotoView loadInBackground];
+    if (self.user) {
+        header.usernameLabel.text = self.user[@"username"];
+        if ( self.user[@"profilePicture"] ) {
+            header.profilePhotoView.file = self.user[@"profilePicture"];
+            [header.profilePhotoView loadInBackground];
+        }
     }
+    else {
+        header.usernameLabel.text = PFUser.currentUser[@"username"];
+        
+        UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPicture:)];
+        [header.profilePhotoView addGestureRecognizer:profileTapGestureRecognizer];
+        [header.profilePhotoView setUserInteractionEnabled:YES];
+        
+        PFUser *user = PFUser.currentUser;
+        if ( user[@"profilePicture"] ) {
+            header.profilePhotoView.file = user[@"profilePicture"];
+            [header.profilePhotoView loadInBackground];
+        }
+    }
+    
     
     self.header = header;
     
