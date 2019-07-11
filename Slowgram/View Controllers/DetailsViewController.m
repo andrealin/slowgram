@@ -13,7 +13,7 @@
 #import "Comment.h"
 #import "DetailsHeaderCell.h"
 
-@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface DetailsViewController () <UITableViewDelegate, UITableViewDataSource, CommentViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray<Comment *> *comments;
 @property (strong, nonatomic) DetailsHeaderCell *header;
@@ -30,6 +30,10 @@
     self.tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionHeaderHeight = 10;
     
+    [self fetchData];
+}
+
+- (void)fetchData {
     // query for comments on this post
     PFRelation *relation = [self.post relationForKey:@"commentRelations"];
     PFQuery *query = relation.query;
@@ -47,8 +51,10 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
-    [self.tableView reloadData];
+}
+
+- (void)didComment {
+    [self fetchData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -56,6 +62,7 @@
         UINavigationController *navigationController = [segue destinationViewController];
         CommentViewController *commentViewController = (CommentViewController*)navigationController.topViewController;
         commentViewController.post = self.post;
+        commentViewController.delegate = self;
 
     }
 }
