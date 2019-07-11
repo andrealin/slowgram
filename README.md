@@ -59,9 +59,9 @@ Profile Tab:
 
 <img src='http://g.recordit.co/sFxeIErZhA.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-Comments and Likes
+Comments and Likes:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/NBXz8T7u9U.gif' title='Video Walkthrough' width='200' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
