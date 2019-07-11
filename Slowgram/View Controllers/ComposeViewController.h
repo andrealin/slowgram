@@ -10,10 +10,14 @@
 #import "HomeViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol ComposeViewControllerDelegate
+
+- (void)didPost;
+
+@end
 
 @interface ComposeViewController : UIViewController
-@property (weak, nonatomic) HomeViewController *homeViewController;
-
+@property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

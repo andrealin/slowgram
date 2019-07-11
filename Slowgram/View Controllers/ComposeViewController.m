@@ -76,7 +76,7 @@
     
     [Post postUserImage:[self resizeImage:self.selectedImage withSize:CGSizeMake(800.0, 800.0)] withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         [self dismissViewControllerAnimated:true completion:^{
-            [self.homeViewController fetchData];
+            [self.delegate didPost];
         }];
     }];
 }

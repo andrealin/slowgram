@@ -17,7 +17,7 @@
 #import "HeaderCell.h"
 #import "ComposeViewController.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ComposeViewControllerDelegate>
 @property (strong, nonatomic) NSArray<Post *> *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
@@ -78,6 +78,10 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+- (void) didPost { // because HomeViewController is a ComposeViewControllerDelegate
+    [self fetchData];
 }
 // Makes a network request to get updated data
 // Updates the tableView with the new data
@@ -174,7 +178,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         
         UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeViewController = navigationController.topViewController;
-        composeViewController.homeViewController = self;
+        composeViewController.delegate = self;
     }
 }
 
