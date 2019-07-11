@@ -145,8 +145,52 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" rowHeight="71" id="dYf-Su-etO" customClass="HeaderCell">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dYf-Su-etO" id="Keq-TQ-xxQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI2-Ob-gPu">
+                                                    <rect key="frame" x="66" y="26" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h5Y-h9-7Ja" customClass="PFImageView">
+                                                    <rect key="frame" x="20" y="20" width="33" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="2jJ-oj-q3A"/>
+                                                        <constraint firstAttribute="width" constant="33" id="cyc-gb-ZVp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbY-XH-Kse">
+                                                    <rect key="frame" x="319" y="26" width="36" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zI2-Ob-gPu" firstAttribute="leading" secondItem="h5Y-h9-7Ja" secondAttribute="trailing" constant="13" id="1B0-e2-El4"/>
+                                                <constraint firstAttribute="trailing" secondItem="tbY-XH-Kse" secondAttribute="trailing" constant="20" symbolic="YES" id="B8p-QV-f5z"/>
+                                                <constraint firstItem="tbY-XH-Kse" firstAttribute="centerY" secondItem="zI2-Ob-gPu" secondAttribute="centerY" id="DWz-Ma-6fz"/>
+                                                <constraint firstItem="h5Y-h9-7Ja" firstAttribute="leading" secondItem="Keq-TQ-xxQ" secondAttribute="leading" constant="20" symbolic="YES" id="JCF-n0-JDZ"/>
+                                                <constraint firstItem="tbY-XH-Kse" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zI2-Ob-gPu" secondAttribute="trailing" constant="8" symbolic="YES" id="W47-gp-t34"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="h5Y-h9-7Ja" secondAttribute="bottom" constant="8" id="X0O-Dl-TF6"/>
+                                                <constraint firstItem="h5Y-h9-7Ja" firstAttribute="top" secondItem="Keq-TQ-xxQ" secondAttribute="top" constant="20" symbolic="YES" id="fnV-zr-QwL"/>
+                                                <constraint firstItem="zI2-Ob-gPu" firstAttribute="centerY" secondItem="h5Y-h9-7Ja" secondAttribute="centerY" id="sRm-sA-LMi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="tbY-XH-Kse" id="HZn-Pf-Kme"/>
+                                            <outlet property="profilePhotoView" destination="h5Y-h9-7Ja" id="GMz-gz-Avh"/>
+                                            <outlet property="usernameLabel" destination="zI2-Ob-gPu" id="pHT-l7-J5W"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SlowgramCell" rowHeight="445" id="I0z-Xa-EAI" customClass="SlowgramCell">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="445"/>
+                                        <rect key="frame" x="0.0" y="126.5" width="375" height="445"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I0z-Xa-EAI" id="MXO-uP-O4n">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="444.5"/>
@@ -473,13 +517,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lC7-N2-vmg">
                                     <size key="itemSize" width="151" height="190"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="150"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="1hl-h8-L40" customClass="CollectionCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="151" height="190"/>
+                                        <rect key="frame" x="0.0" y="150" width="151" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="190"/>
@@ -501,6 +545,27 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileHeader" id="rfJ-99-wkn" customClass="ProfileHeaderCell">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpC-tb-v6m" customClass="PFImageView">
+                                            <rect key="frame" x="35" y="22" width="105" height="106"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhi-Tj-0ll">
+                                            <rect key="frame" x="148" y="22" width="79" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <connections>
+                                        <outlet property="profilePhotoView" destination="vpC-tb-v6m" id="RT2-CX-PTl"/>
+                                        <outlet property="usernameLabel" destination="yhi-Tj-0ll" id="isH-V0-kUU"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

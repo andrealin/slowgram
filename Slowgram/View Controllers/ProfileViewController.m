@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "Post.h"
 #import "CollectionCell.h"
+#import "ProfileHeaderCell.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -79,6 +80,12 @@
     [cell.photoView loadInBackground];
     
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    ProfileHeaderCell *header = [self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
+    header.usernameLabel.text = PFUser.currentUser[@"username"];
+    return header;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

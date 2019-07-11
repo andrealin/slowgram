@@ -21,6 +21,8 @@
 		D2615CA022D406450045CA8C /* SlowgramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2615C9F22D406450045CA8C /* SlowgramUITests.m */; };
 		D270F991744D1F677D08E6CD /* Pods_SlowgramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B115EA25AC59A80070FF6FF /* Pods_SlowgramUITests.framework */; };
 		D28639AE22D6BE1A002F31C9 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639AD22D6BE1A002F31C9 /* CollectionCell.m */; };
+		D28639B122D7A8F2002F31C9 /* HeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639B022D7A8F2002F31C9 /* HeaderCell.m */; };
+		D28639B422D7AD0A002F31C9 /* ProfileHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28639B322D7AD0A002F31C9 /* ProfileHeaderCell.m */; };
 		D2B58D8922D45BF3007A86B4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8822D45BF3007A86B4 /* Post.m */; };
 		D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B58D8C22D4627C007A86B4 /* SlowgramCell.m */; };
 		D2DBFFE422D5466A004AE350 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DBFFE322D5466A004AE350 /* DetailsViewController.m */; };
@@ -80,6 +82,10 @@
 		D2615CA122D406450045CA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D28639AC22D6BE1A002F31C9 /* CollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		D28639AD22D6BE1A002F31C9 /* CollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
+		D28639AF22D7A8F2002F31C9 /* HeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderCell.h; sourceTree = "<group>"; };
+		D28639B022D7A8F2002F31C9 /* HeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderCell.m; sourceTree = "<group>"; };
+		D28639B222D7AD0A002F31C9 /* ProfileHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderCell.h; sourceTree = "<group>"; };
+		D28639B322D7AD0A002F31C9 /* ProfileHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderCell.m; sourceTree = "<group>"; };
 		D2B58D8722D45BF3007A86B4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		D2B58D8822D45BF3007A86B4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		D2B58D8B22D4627C007A86B4 /* SlowgramCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowgramCell.h; sourceTree = "<group>"; };
@@ -229,6 +235,10 @@
 				D2DBFFE622D5580D004AE350 /* InfiniteScrollActivityView.m */,
 				D28639AC22D6BE1A002F31C9 /* CollectionCell.h */,
 				D28639AD22D6BE1A002F31C9 /* CollectionCell.m */,
+				D28639AF22D7A8F2002F31C9 /* HeaderCell.h */,
+				D28639B022D7A8F2002F31C9 /* HeaderCell.m */,
+				D28639B222D7AD0A002F31C9 /* ProfileHeaderCell.h */,
+				D28639B322D7AD0A002F31C9 /* ProfileHeaderCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,10 +476,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28639B122D7A8F2002F31C9 /* HeaderCell.m in Sources */,
 				D2615C8B22D406450045CA8C /* main.m in Sources */,
 				D2B58D8922D45BF3007A86B4 /* Post.m in Sources */,
 				D2615C7D22D406440045CA8C /* AppDelegate.m in Sources */,
 				D2DBFFEA22D5685F004AE350 /* Comment.m in Sources */,
+				D28639B422D7AD0A002F31C9 /* ProfileHeaderCell.m in Sources */,
 				D2092B1E22D4131E003DF641 /* LoginViewController.m in Sources */,
 				D2B58D8D22D4627C007A86B4 /* SlowgramCell.m in Sources */,
 				D2092B2422D455A8003DF641 /* ComposeViewController.m in Sources */,

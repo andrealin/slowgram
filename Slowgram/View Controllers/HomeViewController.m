@@ -14,6 +14,7 @@
 #import "SlowgramCell.h"
 #import "DetailsViewController.h"
 #import "InfiniteScrollActivityView.h"
+#import "HeaderCell.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (strong, nonatomic) NSArray *posts;
@@ -129,7 +130,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
+    HeaderCell *header = [tableView dequeueReusableCellWithIdentifier:@"header"];
     Post *post = self.posts[section];
     
     // Format and set createdAtString
@@ -140,7 +141,8 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     formatter.dateStyle = NSDateFormatterShortStyle;
     formatter.timeStyle = NSDateFormatterNoStyle;
     
-    header.textLabel.text = [NSString stringWithFormat:@"%@ %@", post.author[@"username"], [formatter stringFromDate:date]];
+    header.usernameLabel.text = post.author[@"username"];
+    header.dateLabel.text = [formatter stringFromDate:date];
     return header;
 }
 
