@@ -72,8 +72,7 @@
     [query whereKey:@"objectId" equalTo:self.post.objectId];
     [query findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            // do something with the data fetched
-            if (posts.count > 0) { // already liked, now unliking
+            if (posts.count > 0) { // user has already liked this post
                 [relation removeObject:self.post];
                 [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     [self.post incrementKey:@"likeCount" byAmount:@(-1)];
@@ -83,7 +82,7 @@
                 }];
                 
             }
-            else { // liking
+            else { // user has yet to like this post
                 [relation addObject:self.post];
                 [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     [self.post incrementKey:@"likeCount" byAmount:@(1)];

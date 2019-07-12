@@ -79,7 +79,7 @@
     
     [Post postUserImage:[self resizeImage:self.selectedImage withSize:CGSizeMake(800.0, 800.0)] withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         [self dismissViewControllerAnimated:true completion:^{
-            [self.delegate didPost];
+            [self.delegate didPost]; // make sure the home timeline reloads including this new post
         }];
     }];
 }

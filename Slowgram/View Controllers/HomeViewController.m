@@ -122,7 +122,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     appDelegate.window.rootViewController = loginViewController;
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if ( error ) {
-            // continue
+            // ignoring any logout errors
         }
     }];
 }
@@ -169,12 +169,13 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
         detailsViewController.post = post;
     }
     else if ([@"composeSegue" isEqualToString:segue.identifier]) {
-        
+        // segue to compose a post
         UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeViewController = navigationController.topViewController;
         composeViewController.delegate = self;
     }
     else if ([@"profileSegue" isEqualToString:segue.identifier]) {
+        // segue to view a user's profile page
         ProfileViewController *profileViewController = [segue destinationViewController];
         profileViewController.user = sender;
     }
@@ -240,6 +241,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
 }
 
 - (void)didClickPicture:(PFUser *)user {
+    // show segue to the user's profile page
     [self performSegueWithIdentifier:@"profileSegue" sender:user];
 }
 

@@ -48,13 +48,12 @@
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     
-    if ( self.user ) {
+    if ( self.user ) { // viewing someone's profile page
         [postQuery whereKey:@"author" equalTo:self.user];
     }
-    else {
+    else { // this is the profile tab for my own profile
         [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
     }
-    
     
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
@@ -91,14 +90,14 @@
     [imageLayer setCornerRadius:header.profilePhotoView.frame.size.width/2];
     [imageLayer setMasksToBounds:YES];
     
-    if (self.user) {
+    if (self.user) { // viewing someone's profile page
         header.usernameLabel.text = self.user[@"username"];
         if ( self.user[@"profilePicture"] ) {
             header.profilePhotoView.file = self.user[@"profilePicture"];
             [header.profilePhotoView loadInBackground];
         }
     }
-    else {
+    else { // this is the profile tab for my own profile
         header.usernameLabel.text = PFUser.currentUser[@"username"];
         
         UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPicture:)];
