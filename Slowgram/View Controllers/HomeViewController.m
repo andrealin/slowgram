@@ -44,14 +44,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     [self.tableView insertSubview:refreshControl atIndex:0];
     
     // Set up Infinite Scroll loading indicator
-    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
-    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
-    loadingMoreView.hidden = true;
-    [self.tableView addSubview:loadingMoreView];
-    
-    UIEdgeInsets insets = self.tableView.contentInset;
-    insets.bottom += InfiniteScrollActivityView.defaultHeight;
-    self.tableView.contentInset = insets;
+    [self setUpInfiniteLoader];
     
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:HeaderViewIdentifier];
         
@@ -245,5 +238,16 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     [self performSegueWithIdentifier:@"profileSegue" sender:user];
 }
 
+- (void)setUpInfiniteLoader {
+    // Set up Infinite Scroll loading indicator
 
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.tableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
+}
 @end
