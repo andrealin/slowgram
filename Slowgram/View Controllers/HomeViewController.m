@@ -144,33 +144,12 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     HeaderCell *header = [tableView dequeueReusableCellWithIdentifier:@"header"];
+    
     Post *post = self.posts[section];
+    [header updateWithPost:post];
     
-    // Format and set createdAtString
-    NSDate *date = [post createdAt];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    // Configure date output format
-    formatter.dateStyle = NSDateFormatterShortStyle;
-    formatter.timeStyle = NSDateFormatterNoStyle;
-    
-    header.usernameLabel.text = post.author[@"username"];
-    header.dateLabel.text = [formatter stringFromDate:date];
-    
-    // make profile pic a circle
-    CALayer *imageLayer = header.profilePhotoView.layer;
-    [imageLayer setCornerRadius:header.profilePhotoView.frame.size.width/2];
-    [imageLayer setMasksToBounds:YES];
-    
-    if ( post.author[@"profilePicture"] ) {
-        header.profilePhotoView.file = post.author[@"profilePicture"];
-        [header.profilePhotoView loadInBackground];
-    }
-    
-    header.post = post;
     header.delegate = self;
     
-    header.backgroundColor = [UIColor whiteColor];
     return header;
 }
 

@@ -8,6 +8,7 @@
 
 #import "HeaderCell.h"
 #import "ProfileHeaderCell.h"
+#import "Post.h"
 
 @implementation HeaderCell
 
@@ -30,5 +31,30 @@
    
     [self.delegate didClickPicture:self.post.author];
 }
-
+- (void)updateWithPost:(Post *)post {
+    // Format and set createdAtString
+    NSDate *date = [post createdAt];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    // Configure date output format
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    
+    self.usernameLabel.text = post.author[@"username"];
+    self.dateLabel.text = [formatter stringFromDate:date];
+    
+    // make profile pic a circle
+    CALayer *imageLayer = self.profilePhotoView.layer;
+    [imageLayer setCornerRadius:self.profilePhotoView.frame.size.width/2];
+    [imageLayer setMasksToBounds:YES];
+    
+    if ( post.author[@"profilePicture"] ) {
+        self.profilePhotoView.file = post.author[@"profilePicture"];
+        [self.profilePhotoView loadInBackground];
+    }
+    
+    self.backgroundColor = [UIColor whiteColor];
+    
+    self.post = post;
+}
 @end
