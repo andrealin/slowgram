@@ -8,6 +8,9 @@
 
 #import "Comment.h"
 
+@interface Comment() <PFSubclassing>
+@end
+
 @implementation Comment
 
 @dynamic commentID;

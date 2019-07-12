@@ -9,6 +9,9 @@
 #import "Post.h"
 #import "Comment.h"
 
+@interface Post()<PFSubclassing>
+@end
+
 @implementation Post
 
 @dynamic postID;
