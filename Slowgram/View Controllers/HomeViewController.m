@@ -148,7 +148,7 @@ NSString *HeaderViewIdentifier = @"TableViewHeaderView";
     Post *post = self.posts[section];
     [header updateWithPost:post];
     
-    header.delegate = self;
+    header.delegate = self; // if the profile picture in the header is clicked, home view controller is responsible for segue to profile page
     
     return header;
 }

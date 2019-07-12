@@ -59,6 +59,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([@"commentSegue" isEqualToString:segue.identifier]) {
+        // segue to open up compose view for a comment
         UINavigationController *navigationController = [segue destinationViewController];
         CommentViewController *commentViewController = (CommentViewController*)navigationController.topViewController;
         commentViewController.post = self.post;
@@ -97,10 +98,6 @@
             // handle error
             NSLog(@"%@", error.localizedDescription);
         }
-    }];
-    
-    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        [self.header.likesCountButton setTitle:[self.post.likeCount stringValue] forState:UIControlStateNormal];
     }];
     
 }
