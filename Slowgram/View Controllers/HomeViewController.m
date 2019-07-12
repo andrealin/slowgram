@@ -18,7 +18,7 @@
 #import "ComposeViewController.h"
 #import "ProfileViewController.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ComposeViewControllerDelegate, HeaderCellDelegate>
+@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, ComposeViewControllerDelegate, HeaderCellDelegate, UIImagePickerControllerDelegate>
 @property (strong, nonatomic) NSArray<Post *> *posts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
