@@ -39,6 +39,10 @@
     
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     
+    [self fetchPosts];
+}
+
+- (void) fetchPosts {
     // construct query for all posts by this user
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
